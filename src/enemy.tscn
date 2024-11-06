@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ban02fkf5lwyv"]
+
+[ext_resource type="Script" path="res://src/enemy.gd" id="1_myf8d"]
+[ext_resource type="Script" path="res://src/enemy_area.gd" id="2_vuioh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrhp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egppk"]
+
+[node name="Enemy" type="CharacterBody2D"]
+process_mode = 4
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_myf8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mrhp3")
+debug_color = Color(0.7, 0, 0.0116665, 0.419608)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_vuioh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_egppk")
+debug_color = Color(0.701961, 0, 0.0117647, 0.419608)
+
+[node name="OSN" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_check_area"]
+[connection signal="screen_entered" from="OSN" to="." method="_start_process"]
