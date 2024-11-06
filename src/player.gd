@@ -11,7 +11,7 @@ enum _JUMP_STATES {NONE, QUEUE, READY}
 
 var _num_of_jumps: int = 0
 
-@onready var jump_status: _JUMP_STATES = _JUMP_STATES.NONE:
+var jump_status: _JUMP_STATES = _JUMP_STATES.NONE:
 	set(js):
 		jump_status = js
 		if jump_status == _JUMP_STATES.READY:
@@ -20,6 +20,9 @@ var _num_of_jumps: int = 0
 		set_process(js)
 		if !js:
 			time_since_jump_press = 0.0
+
+func _ready() -> void:
+	set_process(false)
 
 func _physics_process(delta: float):
 	var input_axis: float = Input.get_action_strength(&"Right") - Input.get_action_strength(&"Left")
@@ -51,3 +54,7 @@ func _process(delta: float) -> void:
 		jump_status = _JUMP_STATES.READY
 	elif time_since_jump_press >= _QUEUE_THESHOLD:
 		jump_status = _JUMP_STATES.NONE
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.

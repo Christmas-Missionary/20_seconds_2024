@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b73v33ju6mpna" path="res://assets/images/player.png" id="1_ss40o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0re3"]
-size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
 process_mode = 1
