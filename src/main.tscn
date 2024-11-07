@@ -2,16 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/player.tscn" id="1_tolmm"]
 [ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://src/block_tile_set.tres" id="2_h45d6"]
-[ext_resource type="PackedScene" uid="uid://ban02fkf5lwyv" path="res://src/enemy.tscn" id="3_vpfk4"]
+[ext_resource type="PackedScene" uid="uid://ban02fkf5lwyv" path="res://src/tumbleweed.tscn" id="3_vpfk4"]
 
 [node name="Main" type="Node2D"]
 process_mode = 1
 texture_filter = 1
 metadata/_edit_lock_ = true
 
-[node name="Enemy" parent="." instance=ExtResource("3_vpfk4")]
-position = Vector2(216, -60)
-collision_layer = 2
+[node name="Tumbleweed" parent="." instance=ExtResource("3_vpfk4")]
+position = Vector2(139, -53)
 
 [node name="Player" parent="." instance=ExtResource("1_tolmm")]
 process_mode = 3
