@@ -28,24 +28,25 @@ metadata/_edit_lock_ = true
 process_mode = 3
 position = Vector2(50, -50)
 
-[node name="UI" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1.0
 offset_bottom = 1.0
 mouse_filter = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 169.0
-anchor_top = -111.0
-anchor_right = 169.073
-anchor_bottom = 27.0001
-offset_left = -116.0
-offset_top = -121.0
-offset_right = 158.927
-offset_bottom = -229.0
+anchor_left = 56.0
+anchor_top = -140.0
+anchor_right = 346.073
+anchor_bottom = 74.0
+offset_top = 159.0
+offset_right = 187.927
+theme_override_font_sizes/normal_font_size = 40
 text = "Time: 20.0 Score: 0000 "
 fit_content = true
 scroll_active = false
