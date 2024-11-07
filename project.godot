@@ -44,6 +44,12 @@ Run={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Tile Map Layer"
+2d_physics/layer_2="Enemy Layer"
+2d_physics/layer_4="Player Layer"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
