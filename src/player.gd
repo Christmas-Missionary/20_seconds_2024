@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-const _MAX_SPEED: float = 350.0
-const _ACCEL: float = 900.0
-const _FRICTION: float = 300.0
-const _GRAVITY: float = 300.0
-const _JUMP_FORCE: float = 250.0
+const _MAX_SPEED: float = 520.0
+const _ACCEL: float = 1500.0
+const _FRICTION: float = 1500.0
+const _GRAVITY: float = 880.0
+const _JUMP_FORCE: float = 370.0
 const _QUEUE_THESHOLD: float = 0.15
 
 enum _JUMP_STATES {NONE, QUEUE, READY}
