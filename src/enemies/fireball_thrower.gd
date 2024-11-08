@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const _FIREBALL: PackedScene = preload("res://src/fireball.tscn")
+const _FIREBALL: PackedScene = preload("res://src/enemies/fireball.tscn")
 const _RAD_DIFF: float = PI / 4 * 3
 
 @onready var timer: = $Timer as Timer
