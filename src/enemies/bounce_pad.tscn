@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvpnmfb71jgxd"]
+
+[ext_resource type="Script" path="res://src/enemies/bounce_pad.gd" id="1_uamck"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkaxx"]
+
+[node name="BouncePad" type="Area2D"]
+collision_layer = 9
+script = ExtResource("1_uamck")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tkaxx")
+debug_color = Color(0.676667, 0, 0.7, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_bounce_thing"]
