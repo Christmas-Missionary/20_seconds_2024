@@ -22,6 +22,6 @@ func _physics_process(delta: float) -> void:
 			velocity = horizontal
 	move_and_slide()
 
-func check_body(body: Node2D) -> void:
+func _check_body(body: Node2D) -> void:
 	if body is Player:
 		(body as Player).die()
