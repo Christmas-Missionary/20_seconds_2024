@@ -12,11 +12,11 @@ collision_layer = 8
 script = ExtResource("1_cuihl")
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_f0re3")
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_ss40o")
 metadata/_edit_lock_ = true
