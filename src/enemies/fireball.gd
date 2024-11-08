@@ -3,7 +3,8 @@ class_name Fireball
 
 var _velocity: Vector2 = Vector2.ZERO
 
-func spawn(direction: Vector2) -> void:
+func spawn(pos: Vector2, direction: Vector2) -> void:
+	position = pos
 	_velocity = direction * 5
 
 func _physics_process(delta: float) -> void:
