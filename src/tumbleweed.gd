@@ -10,7 +10,6 @@ func _ready() -> void:
 	set_process_mode(Node.PROCESS_MODE_DISABLED)
 
 func _physics_process(delta: float) -> void:
-	print(velocity)
 	if !is_wall_climbing:
 		velocity.y = 0.0 if is_on_floor() else velocity.y + (_GRAVITY * delta)
 		if is_on_wall():
@@ -22,3 +21,7 @@ func _physics_process(delta: float) -> void:
 			horizontal = -horizontal
 			velocity = horizontal
 	move_and_slide()
+
+func check_body(body: Node2D) -> void:
+	if body is Player:
+		(body as Player).die()
