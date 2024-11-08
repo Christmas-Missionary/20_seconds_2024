@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=6 format=4 uid="uid://dwjidn2e36hua"]
 
+[ext_resource type="PackedScene" uid="uid://bmr4gtup2a1ri" path="res://src/fireball_thrower.tscn" id="1_1ve2r"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/player.tscn" id="1_tolmm"]
 [ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://src/block_tile_set.tres" id="2_h45d6"]
 [ext_resource type="PackedScene" uid="uid://ban02fkf5lwyv" path="res://src/tumbleweed.tscn" id="3_vpfk4"]
@@ -9,6 +10,9 @@
 process_mode = 1
 texture_filter = 1
 metadata/_edit_lock_ = true
+
+[node name="FireballThrower" parent="." instance=ExtResource("1_1ve2r")]
+position = Vector2(470, -190)
 
 [node name="Tumbleweed" parent="." instance=ExtResource("3_vpfk4")]
 position = Vector2(323, -36)
