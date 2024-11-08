@@ -16,7 +16,7 @@ debug_color = Color(0.7, 0, 0.0116665, 0.419608)
 [node name="Area" type="Area2D" parent="."]
 collision_mask = 8
 
-[node name="Collision" type="CollisionShape2D" parent="Area"]
+[node name="AreaCollision" type="CollisionShape2D" parent="Area"]
 shape = ExtResource("2_pu7ch")
 debug_color = Color(0.701961, 0, 0.0117647, 0.419608)
 
