@@ -1,5 +1,17 @@
-[gd_scene format=3 uid="uid://c16hdwi5ggrpx"]
+[gd_scene load_steps=3 format=3 uid="uid://c16hdwi5ggrpx"]
+
+[ext_resource type="Script" path="res://src/cactus.gd" id="1_v2ayh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u6yvh"]
+radius = 12.0
+height = 50.0
 
 [node name="Cactus" type="Area2D"]
+collision_mask = 8
+script = ExtResource("1_v2ayh")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_u6yvh")
+debug_color = Color(0, 0.7, 0, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_check_body"]
