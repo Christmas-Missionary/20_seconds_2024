@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ban02fkf5lwyv"]
 
-[ext_resource type="Script" path="res://src/tumbleweed.gd" id="1_myf8d"]
+[ext_resource type="Script" path="res://src/enemies/tumbleweed.gd" id="1_myf8d"]
 [ext_resource type="Shape2D" uid="uid://d0ig8pbvic6xe" path="res://assets/tumbleweed_coll.tres" id="2_pu7ch"]
 
 [node name="Tumbleweed" type="CharacterBody2D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c16hdwi5ggrpx"]
 
-[ext_resource type="Script" path="res://src/cactus.gd" id="1_v2ayh"]
+[ext_resource type="Script" path="res://src/enemies/cactus.gd" id="1_v2ayh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u6yvh"]
 radius = 12.0
