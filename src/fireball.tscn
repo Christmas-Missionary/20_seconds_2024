@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddpxyp3sodbri"]
+
+[ext_resource type="Script" path="res://src/fireball.gd" id="1_w4kov"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_faevp"]
+
+[node name="Fireball" type="Area2D"]
+collision_mask = 8
+script = ExtResource("1_w4kov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_faevp")
+debug_color = Color(0.7, 0.455, 0, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_check_body"]
+[connection signal="timeout" from="Timer" to="." method="queue_free"]
