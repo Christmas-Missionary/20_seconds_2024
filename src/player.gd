@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 const _MAX_SPEED: float = 520.0
 const _ACCEL: float = 1500.0
@@ -55,6 +56,7 @@ func _process(delta: float) -> void:
 	elif time_since_jump_press >= _QUEUE_THESHOLD:
 		jump_status = _JUMP_STATES.NONE
 
-
-func _on_button_pressed() -> void:
-	pass # Replace with function body.
+## Called by tumbleweed
+func die() -> void:
+	# Placeholder
+	print("the player has died.")
