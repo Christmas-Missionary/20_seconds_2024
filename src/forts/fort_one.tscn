@@ -2,27 +2,21 @@
 
 [ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="1_lt5mv"]
 [ext_resource type="PackedScene" uid="uid://dvpnmfb71jgxd" path="res://src/enemies/bounce_pad.tscn" id="2_us4j5"]
+[ext_resource type="Script" path="res://src/forts/fort_one.gd" id="2_wt1ow"]
 [ext_resource type="PackedScene" uid="uid://bmr4gtup2a1ri" path="res://src/enemies/fireball_thrower.tscn" id="3_jwd2v"]
-[ext_resource type="PackedScene" uid="uid://ban02fkf5lwyv" path="res://src/enemies/tumbleweed.tscn" id="4_qijjb"]
 [ext_resource type="PackedScene" uid="uid://c16hdwi5ggrpx" path="res://src/enemies/cactus.tscn" id="5_scc7x"]
 [ext_resource type="PackedScene" uid="uid://ry2qfpfm5skp" path="res://src/enemies/dust_devil.tscn" id="6_5ypkv"]
 
 [node name="FortOne" type="TileMapLayer"]
 tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAABAP//AQAAAAAAAAACAP//AQAAAAAAAAADAP//AQAAAAAAAAAEAP3/AQAAAAAAAAAEAP7/AQAAAAAAAAAEAP//AQAAAAAAAAAFAP//AQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQAAAAAAAAAIAPv/AQAAAAAAAAAIAPz/AQAAAAAAAAAIAP3/AQAAAAAAAAAIAP7/AQAAAAAAAAAIAP//AQAAAAAAAAAJAP//AQAAAAAAAAAKAPr/AQAAAAAAAAAKAPv/AQAAAAAAAAAKAPz/AQAAAAAAAAAKAP3/AQAAAAAAAAAKAP7/AQAAAAAAAAAKAP//AQAAAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP//AQAAAAAAAAAOAPf/AQAAAAAAAAAOAPj/AQAAAAAAAAAOAPn/AQAAAAAAAAAOAPr/AQAAAAAAAAAOAPv/AQAAAAAAAAAOAPz/AQAAAAAAAAAOAP3/AQAAAAAAAAAOAP7/AQAAAAAAAAAOAP//AQAAAAAAAAA=")
 tile_set = ExtResource("1_lt5mv")
+script = ExtResource("2_wt1ow")
 
 [node name="BouncePad2" parent="." instance=ExtResource("2_us4j5")]
 position = Vector2(50, -22)
 
-[node name="BouncePad" parent="." instance=ExtResource("2_us4j5")]
-position = Vector2(50, -62)
-
 [node name="FireballThrower" parent="." instance=ExtResource("3_jwd2v")]
 position = Vector2(210, -146)
-
-[node name="Tumbleweed" parent="." instance=ExtResource("4_qijjb")]
-position = Vector2(150, -36)
-collision_layer = 5
 
 [node name="BouncePad5" parent="." instance=ExtResource("2_us4j5")]
 position = Vector2(112, -23)
@@ -35,9 +29,6 @@ position = Vector2(210, -123)
 
 [node name="Cactus2" parent="." instance=ExtResource("5_scc7x")]
 position = Vector2(10, -100)
-
-[node name="Cactus" parent="." instance=ExtResource("5_scc7x")]
-position = Vector2(90, -85)
 
 [node name="FireballThrower2" parent="." instance=ExtResource("3_jwd2v")]
 position = Vector2(50, -104)
