@@ -26,6 +26,9 @@ func _ready() -> void:
 	set_process(false)
 
 func _physics_process(delta: float):
+	if Input.get_action_strength(&"Reset"):
+		die()
+		return
 	var input_axis: float = Input.get_action_strength(&"Right") - Input.get_action_strength(&"Left")
 	velocity = Vector2(move_toward(velocity.x, input_axis * _MAX_SPEED,
 	(_ACCEL if input_axis else _FRICTION) * delta),
@@ -43,9 +46,9 @@ func _physics_process(delta: float):
 	elif is_on_floor():
 		_num_of_jumps = 0
 	move_and_slide()
-	# Placeholder for death
+	
 	if position.y > 0:
-		position = Vector2(50, -50)
+		die()
 
 var time_since_jump_press: float = 0.0
 func _process(delta: float) -> void:
@@ -55,7 +58,6 @@ func _process(delta: float) -> void:
 	elif time_since_jump_press >= _QUEUE_THESHOLD:
 		jump_status = _JUMP_STATES.NONE
 
-## Called by tumbleweed
 func die() -> void:
-	# Placeholder
-	print("the player has died.")
+	await get_tree().process_frame
+	get_tree().reload_current_scene()
