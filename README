@@ -14,6 +14,6 @@ https://christmas-missionary.itch.io/[whatever the title will be]
 
 # What's with the "other_copyrights"?  
 
-`GODOT_ENGINE.txt` and `GODOT_3RD_PARTY.txt` are there to fulfill any licenses they come with.  
+`GODOT_ENGINE` and `GODOT_3RD_PARTY` are there to fulfill any licenses they come with.  
 These are not important to the source code itself.  
-The assets listed in `FOR_THIS_PROJECT.txt` belong to other copyright holders with their own licenses.
+The assets listed in `for_this_project.txt` belong to other copyright holders with their own licenses.
