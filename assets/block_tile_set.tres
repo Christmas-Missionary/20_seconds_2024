@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dxefvk7rqoljf"]
 
-[ext_resource type="Texture2D" uid="uid://xklqs8rijipx" path="res://assets/images/block.png" id="1_5sr2c"]
+[ext_resource type="Texture2D" uid="uid://xklqs8rijipx" path="res://assets/images/block.png" id="1_mb68y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_drgvh"]
-texture = ExtResource("1_5sr2c")
+texture = ExtResource("1_mb68y")
 texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
