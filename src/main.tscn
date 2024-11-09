@@ -14,7 +14,7 @@ texture_filter = 1
 metadata/_edit_lock_ = true
 
 [node name="BouncePad" parent="." instance=ExtResource("1_7rh2r")]
-position = Vector2(470, -190)
+position = Vector2(470, -183)
 
 [node name="DustDevil" parent="." instance=ExtResource("1_86ce6")]
 position = Vector2(554, -54)
