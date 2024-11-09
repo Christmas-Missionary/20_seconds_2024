@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=7 format=4 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="PackedScene" uid="uid://bmr4gtup2a1ri" path="res://src/enemies/fireball_thrower.tscn" id="1_1ve2r"]
 [ext_resource type="PackedScene" uid="uid://dvpnmfb71jgxd" path="res://src/enemies/bounce_pad.tscn" id="1_7rh2r"]
-[ext_resource type="PackedScene" uid="uid://ry2qfpfm5skp" path="res://src/enemies/dust_devil.tscn" id="1_86ce6"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/player.tscn" id="1_tolmm"]
 [ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="2_h45d6"]
 [ext_resource type="PackedScene" uid="uid://ban02fkf5lwyv" path="res://src/enemies/tumbleweed.tscn" id="3_vpfk4"]
@@ -13,17 +12,18 @@ process_mode = 1
 texture_filter = 1
 metadata/_edit_lock_ = true
 
-[node name="BouncePad" parent="." instance=ExtResource("1_7rh2r")]
-position = Vector2(470, -183)
+[node name="BouncePad2" parent="." instance=ExtResource("1_7rh2r")]
+position = Vector2(230, -22)
 
-[node name="DustDevil" parent="." instance=ExtResource("1_86ce6")]
-position = Vector2(554, -54)
+[node name="BouncePad" parent="." instance=ExtResource("1_7rh2r")]
+position = Vector2(290, -22)
 
 [node name="FireballThrower" parent="." instance=ExtResource("1_1ve2r")]
-position = Vector2(470, -297)
+position = Vector2(390, -130)
 
 [node name="Tumbleweed" parent="." instance=ExtResource("3_vpfk4")]
 position = Vector2(323, -36)
+collision_layer = 5
 
 [node name="Player" parent="." instance=ExtResource("1_tolmm")]
 process_mode = 3
@@ -59,4 +59,4 @@ scroll_active = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Cactus" parent="." instance=ExtResource("4_h8ip3")]
-position = Vector2(220, -45)
+position = Vector2(230, -51)
