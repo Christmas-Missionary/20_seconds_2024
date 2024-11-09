@@ -11,6 +11,7 @@ size = Vector2(22, 6)
 [node name="BouncePad" type="RigidBody2D"]
 collision_layer = 13
 collision_mask = 9
+lock_rotation = true
 script = ExtResource("1_uamck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -24,5 +25,8 @@ collision_mask = 9
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_vr2ab")
 debug_color = Color(0.315, 0, 0.7, 0.419608)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+scale = Vector2(1.2, 5)
 
 [connection signal="body_entered" from="Area2D" to="." method="_bounce_thing"]

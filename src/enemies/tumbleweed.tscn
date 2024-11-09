@@ -20,8 +20,7 @@ collision_mask = 8
 shape = ExtResource("2_pu7ch")
 debug_color = Color(0.701961, 0, 0.0117647, 0.419608)
 
-[node name="OSN" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="Area" to="." method="_check_body"]
-[connection signal="screen_entered" from="OSN" to="OSN" method="queue_free"]
-[connection signal="screen_entered" from="OSN" to="." method="set_process_mode" binds= [1]]
