@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ban02fkf5lwyv"]
+[gd_scene load_steps=5 format=3 uid="uid://ban02fkf5lwyv"]
 
 [ext_resource type="Script" path="res://src/enemies/tumbleweed.gd" id="1_myf8d"]
 [ext_resource type="Shape2D" uid="uid://d0ig8pbvic6xe" path="res://assets/tumbleweed_coll.tres" id="2_pu7ch"]
+[ext_resource type="Texture2D" uid="uid://cy3emxlo583qm" path="res://assets/images/ball.png" id="3_qe8vo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r13ms"]
 radius = 11.0
@@ -25,5 +26,10 @@ debug_color = Color(0.701961, 0, 0.0117647, 0.419608)
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.701961, 0, 0.0117647, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("3_qe8vo")
 
 [connection signal="body_entered" from="Area" to="." method="_check_body"]
