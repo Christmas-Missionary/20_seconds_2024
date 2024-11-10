@@ -17,6 +17,7 @@ shape = ExtResource("2_pu7ch")
 debug_color = Color(0.7, 0, 0.0116665, 0.419608)
 
 [node name="Area" type="Area2D" parent="."]
+collision_mask = 8
 
 [node name="AreaCollision" type="CollisionShape2D" parent="Area"]
 shape = SubResource("CircleShape2D_r13ms")
