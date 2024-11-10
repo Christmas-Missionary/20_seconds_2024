@@ -59,5 +59,4 @@ func _process(delta: float) -> void:
 		jump_status = _JUMP_STATES.NONE
 
 func die() -> void:
-	await get_tree().process_frame
-	get_tree().reload_current_scene()
+	get_tree().reload_current_scene.call_deferred()
