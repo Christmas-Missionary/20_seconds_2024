@@ -1,7 +1,7 @@
 # What is this?
 
-This is a game I made for the 20 Second Game Jam 2024, uploaded to itch.io
-https://christmas-missionary.itch.io/[whatever the title will be]
+This is a game I made for the 20 Second Game Jam 2024.  
+It will be uploaded to itch.io soon.  
 
 # How to run a Godot project
 1. Download the .zip file
