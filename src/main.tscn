@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=7 format=4 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/player.tscn" id="1_tolmm"]
 [ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="2_h45d6"]
 [ext_resource type="Script" path="res://src/time_left_label.gd" id="4_61toc"]
+[ext_resource type="Script" path="res://src/score_label.gd" id="5_ogntn"]
+[ext_resource type="Script" path="res://src/high_score_label.gd" id="6_uqvrq"]
 
 [node name="Main" type="Node2D"]
 process_mode = 1
@@ -56,13 +58,16 @@ autostart = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 32
-text = "Score: 00000"
+text = "Score: 0"
+script = ExtResource("5_ogntn")
 
 [node name="HighScoreLabel" type="RichTextLabel" parent="CanvasLayer/UI/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 32
-text = "High Score: 00000"
+text = "High Score: 0"
+script = ExtResource("6_uqvrq")
 
 [connection signal="screen_entered" from="Notifier" to="." method="_generate_next_fort"]
+[connection signal="block_distance" from="Player" to="CanvasLayer/UI/Container/ScoreLabel" method="set_score"]
 [connection signal="timeout" from="CanvasLayer/UI/Container/TimeLeftLabel/GameTimer" to="Player" method="die"]

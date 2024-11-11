@@ -22,6 +22,8 @@ var jump_status: _JUMP_STATES = _JUMP_STATES.NONE:
 		if !js:
 			time_since_jump_press = 0.0
 
+signal block_distance(val: int)
+
 func _ready() -> void:
 	set_process(false)
 
@@ -47,6 +49,7 @@ func _physics_process(delta: float):
 		_num_of_jumps = 0
 	move_and_slide()
 	
+	block_distance.emit(floori(position.x / 20))
 	if position.y > 0:
 		die()
 
