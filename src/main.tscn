@@ -10,6 +10,10 @@ texture_filter = 1
 script = ExtResource("1_nanye")
 metadata/_edit_lock_ = true
 
+[node name="Notifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1150, -150)
+scale = Vector2(16, 16)
+
 [node name="Player" parent="." instance=ExtResource("1_tolmm")]
 process_mode = 3
 position = Vector2(29, -29)
@@ -42,3 +46,5 @@ text = "Time: 20.0 Score: 0000 "
 fit_content = true
 scroll_active = false
 metadata/_edit_use_anchors_ = true
+
+[connection signal="screen_entered" from="Notifier" to="." method="_generate_next_fort"]

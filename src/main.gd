@@ -8,11 +8,17 @@ const _ALL_FORTS: Array[PackedScene] = [
 const size: int = 3
 
 func _ready() -> void:
-	for dist: int in range(500, 10501, 500):
-		var fort: = _ALL_FORTS[randi() % size].instantiate() as Node2D
-		add_child(fort)
-		fort.position = Vector2(dist, 0)
+	var fort: = _ALL_FORTS[randi() % size].instantiate() as Node2D
+	add_child(fort)
+	fort.position = Vector2(500, 0)
 	
 	var tilelayer: = $BlockLayer as TileMapLayer
 	for i: int in range(2, 526): # 20 seconds of just running
 		tilelayer.set_cell(Vector2(i, -1), 1, Vector2i.ZERO)
+
+@onready var _notifier: = $Notifier as VisibleOnScreenNotifier2D
+func _generate_next_fort() -> void:
+	var fort: = _ALL_FORTS[randi() % size].instantiate() as Node2D
+	add_child(fort)
+	fort.position = _notifier.position + Vector2(-150, 150)
+	_notifier.position.x += 500
