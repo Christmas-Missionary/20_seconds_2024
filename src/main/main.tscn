@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=4 uid="uid://dwjidn2e36hua"]
 
-[ext_resource type="Script" path="res://src/main.gd" id="1_nanye"]
-[ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/player.tscn" id="1_tolmm"]
+[ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
+[ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player.tscn" id="1_tolmm"]
 [ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="2_h45d6"]
-[ext_resource type="Script" path="res://src/time_left_label.gd" id="4_61toc"]
-[ext_resource type="Script" path="res://src/score_label.gd" id="5_ogntn"]
-[ext_resource type="Script" path="res://src/high_score_label.gd" id="6_uqvrq"]
+[ext_resource type="Script" path="res://src/main/time_left_label.gd" id="4_61toc"]
+[ext_resource type="Script" path="res://src/main/score_label.gd" id="5_ogntn"]
+[ext_resource type="Script" path="res://src/main/high_score_label.gd" id="6_uqvrq"]
 
 [node name="Main" type="Node2D"]
 process_mode = 1
