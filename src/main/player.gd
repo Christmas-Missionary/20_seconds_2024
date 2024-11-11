@@ -22,6 +22,9 @@ var jump_status: _JUMP_STATES = _JUMP_STATES.NONE:
 		if !js:
 			time_since_jump_press = 0.0
 
+const _VIEWPORT_QUARTER_WIDTH: int = 300
+@onready var _camera: = $Camera as Camera2D
+
 signal block_distance(val: int)
 
 func _ready() -> void:
@@ -48,6 +51,9 @@ func _physics_process(delta: float):
 	elif is_on_floor():
 		_num_of_jumps = 0
 	move_and_slide()
+	
+	_camera.limit_left = maxi(_camera.limit_left, int(_camera.get_screen_center_position().x - _VIEWPORT_QUARTER_WIDTH))
+	position.x = maxi(int(position.x), _camera.limit_left)
 	
 	block_distance.emit(floori(position.x / 20))
 	if position.y > 0:
