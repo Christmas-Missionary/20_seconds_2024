@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=8 format=4 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player.tscn" id="1_tolmm"]
 [ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="2_h45d6"]
+[ext_resource type="FontFile" uid="uid://bgd7dbp83hddp" path="res://assets/fonts/BitPotionExt.ttf" id="4_2bdr6"]
 [ext_resource type="Script" path="res://src/main/time_left_label.gd" id="4_61toc"]
 [ext_resource type="Script" path="res://src/main/score_label.gd" id="5_ogntn"]
 [ext_resource type="Script" path="res://src/main/high_score_label.gd" id="6_uqvrq"]
@@ -44,8 +45,9 @@ offset_bottom = 49.0
 [node name="TimeLeftLabel" type="RichTextLabel" parent="CanvasLayer/UI/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/normal_font_size = 32
-text = "Time: 20.0"
+theme_override_fonts/normal_font = ExtResource("4_2bdr6")
+theme_override_font_sizes/normal_font_size = 48
+text = "TIME: 20.0"
 script = ExtResource("4_61toc")
 
 [node name="GameTimer" type="Timer" parent="CanvasLayer/UI/Container/TimeLeftLabel"]
@@ -57,15 +59,17 @@ autostart = true
 [node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer/UI/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/normal_font_size = 32
-text = "Score: 0"
+theme_override_fonts/normal_font = ExtResource("4_2bdr6")
+theme_override_font_sizes/normal_font_size = 48
+text = "SCORE: 0"
 script = ExtResource("5_ogntn")
 
 [node name="HighScoreLabel" type="RichTextLabel" parent="CanvasLayer/UI/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/normal_font_size = 32
-text = "High Score: 0"
+theme_override_fonts/normal_font = ExtResource("4_2bdr6")
+theme_override_font_sizes/normal_font_size = 48
+text = "HIGH SCORE: 0"
 script = ExtResource("6_uqvrq")
 
 [connection signal="screen_entered" from="Notifier" to="." method="_generate_next_fort"]
