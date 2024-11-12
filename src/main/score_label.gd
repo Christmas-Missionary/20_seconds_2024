@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-@onready var _high_score: = $"../HighScoreLabel" as RichTextLabel
+@onready var _high_score: = $"../HighScore" as RichTextLabel
 func set_score(val: int) -> void:
 	text = "SCORE: " + str(val)
 	if val > HighScore.high_score:
