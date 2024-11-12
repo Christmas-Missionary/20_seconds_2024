@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=9 format=4 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player.tscn" id="1_tolmm"]
@@ -7,12 +7,15 @@
 [ext_resource type="Script" path="res://src/main/time_left_label.gd" id="4_61toc"]
 [ext_resource type="Script" path="res://src/main/score_label.gd" id="5_ogntn"]
 [ext_resource type="Script" path="res://src/main/high_score_label.gd" id="6_uqvrq"]
+[ext_resource type="Script" path="res://src/main/legal_text.gd" id="8_wbmt4"]
 
 [node name="Main" type="Node2D"]
 process_mode = 1
 texture_filter = 1
 script = ExtResource("1_nanye")
 metadata/_edit_lock_ = true
+metadata/_edit_vertical_guides_ = [800.0, 900.0, 700.0]
+metadata/_edit_horizontal_guides_ = [525.0, 625.0]
 
 [node name="Notifier" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(1150, -150)
@@ -78,9 +81,9 @@ script = ExtResource("6_uqvrq")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI"]
 layout_mode = 0
-offset_left = 200.0
+offset_left = 400.0
 offset_top = 100.0
-offset_right = 1000.0
+offset_right = 1200.0
 offset_bottom = 650.0
 color = Color(0, 0, 0, 1)
 
@@ -144,6 +147,32 @@ theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]I DON'T KNOW THE TITLE YET"
 
+[node name="LegalLabel" type="RichTextLabel" parent="CanvasLayer/UI/ColorRect"]
+visible = false
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 400.0
+script = ExtResource("8_wbmt4")
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/UI/ColorRect"]
+visible = false
+layout_mode = 0
+offset_left = 300.0
+offset_top = 425.0
+offset_right = 500.0
+offset_bottom = 525.0
+theme_override_fonts/font = ExtResource("4_2bdr6")
+theme_override_font_sizes/font_size = 64
+text = "CLOSE"
+
 [connection signal="screen_entered" from="Notifier" to="." method="_generate_next_fort"]
 [connection signal="block_distance" from="Player" to="CanvasLayer/UI/Labels/Score" method="set_score"]
 [connection signal="timeout" from="CanvasLayer/UI/Labels/TimeLeft/GameTimer" to="Player" method="die"]
+[connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/Container" method="hide"]
+[connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/Title" method="hide"]
+[connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/LegalLabel" method="show"]
+[connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/CloseButton" method="show"]
+[connection signal="pressed" from="CanvasLayer/UI/ColorRect/CloseButton" to="CanvasLayer/UI/ColorRect/Container" method="show"]
+[connection signal="pressed" from="CanvasLayer/UI/ColorRect/CloseButton" to="CanvasLayer/UI/ColorRect/Title" method="show"]
+[connection signal="pressed" from="CanvasLayer/UI/ColorRect/CloseButton" to="CanvasLayer/UI/ColorRect/LegalLabel" method="hide"]
+[connection signal="pressed" from="CanvasLayer/UI/ColorRect/CloseButton" to="CanvasLayer/UI/ColorRect/CloseButton" method="hide"]
