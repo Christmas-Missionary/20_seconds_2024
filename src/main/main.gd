@@ -7,6 +7,8 @@ const _ALL_FORTS: Array[PackedScene] = [
 ]
 const size: int = 3
 
+signal request_pause
+
 func _ready() -> void:
 	var fort: = _ALL_FORTS[randi() % size].instantiate() as Node2D
 	add_child(fort)
@@ -16,6 +18,11 @@ func _ready() -> void:
 	for i: int in range(2, 526): # 20 seconds of just running
 		tilelayer.set_cell(Vector2(i, -1), 1, Vector2i.ZERO)
 	get_tree().set_pause(true)
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"Pause"):
+		request_pause.emit()
+		get_tree().set_pause(true)
 
 @onready var _notifier: = $Notifier as VisibleOnScreenNotifier2D
 func _generate_next_fort() -> void:
