@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=11 format=4 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player.tscn" id="1_tolmm"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bgd7dbp83hddp" path="res://assets/fonts/BitPotionExt.ttf" id="4_2bdr6"]
 [ext_resource type="Script" path="res://src/main/time_left_label.gd" id="4_61toc"]
 [ext_resource type="Script" path="res://src/main/score_label.gd" id="5_ogntn"]
+[ext_resource type="Script" path="res://src/main/game_timer.gd" id="6_6u3n4"]
 [ext_resource type="Script" path="res://src/main/high_score_label.gd" id="6_uqvrq"]
 [ext_resource type="Script" path="res://src/main/play.gd" id="8_0emv5"]
 [ext_resource type="Script" path="res://src/main/legal_text.gd" id="8_wbmt4"]
@@ -62,6 +63,7 @@ script = ExtResource("4_61toc")
 process_callback = 0
 wait_time = 20.0
 one_shot = true
+script = ExtResource("6_6u3n4")
 
 [node name="Score" type="RichTextLabel" parent="CanvasLayer/UI/Labels"]
 layout_mode = 2
@@ -168,11 +170,13 @@ theme_override_fonts/font = ExtResource("4_2bdr6")
 theme_override_font_sizes/font_size = 64
 text = "CLOSE"
 
+[connection signal="request_pause" from="." to="CanvasLayer/UI/ColorRect" method="show"]
+[connection signal="request_pause" from="." to="CanvasLayer/UI/Labels/TimeLeft/GameTimer" method="set_paused" binds= [true]]
 [connection signal="screen_entered" from="Notifier" to="." method="_generate_next_fort"]
 [connection signal="block_distance" from="Player" to="CanvasLayer/UI/Labels/Score" method="set_score"]
 [connection signal="timeout" from="CanvasLayer/UI/Labels/TimeLeft/GameTimer" to="Player" method="die"]
-[connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/Labels/TimeLeft/GameTimer" method="start"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/ColorRect" method="hide"]
+[connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/Labels/TimeLeft/GameTimer" method="set_paused" binds= [false]]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/Container" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/Title" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/LegalLabel" method="show"]
