@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=10 format=4 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player.tscn" id="1_tolmm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://src/main/time_left_label.gd" id="4_61toc"]
 [ext_resource type="Script" path="res://src/main/score_label.gd" id="5_ogntn"]
 [ext_resource type="Script" path="res://src/main/high_score_label.gd" id="6_uqvrq"]
+[ext_resource type="Script" path="res://src/main/play.gd" id="8_0emv5"]
 [ext_resource type="Script" path="res://src/main/legal_text.gd" id="8_wbmt4"]
 
 [node name="Main" type="Node2D"]
@@ -23,7 +24,6 @@ scale = Vector2(16, 16)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_tolmm")]
-process_mode = 3
 position = Vector2(29, -29)
 collision_mask = 3
 
@@ -35,6 +35,7 @@ metadata/_edit_lock_ = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" type="Control" parent="CanvasLayer"]
+process_mode = 3
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
@@ -61,7 +62,6 @@ script = ExtResource("4_61toc")
 process_callback = 0
 wait_time = 20.0
 one_shot = true
-autostart = true
 
 [node name="Score" type="RichTextLabel" parent="CanvasLayer/UI/Labels"]
 layout_mode = 2
@@ -102,6 +102,7 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("4_2bdr6")
 theme_override_font_sizes/font_size = 128
 text = "PLAY"
+script = ExtResource("8_0emv5")
 
 [node name="Legal" type="Button" parent="CanvasLayer/UI/ColorRect/Container/Buttons"]
 layout_mode = 2
@@ -152,6 +153,8 @@ visible = false
 layout_mode = 0
 offset_right = 800.0
 offset_bottom = 400.0
+theme_override_fonts/normal_font = ExtResource("4_2bdr6")
+theme_override_font_sizes/normal_font_size = 32
 script = ExtResource("8_wbmt4")
 
 [node name="CloseButton" type="Button" parent="CanvasLayer/UI/ColorRect"]
@@ -168,6 +171,8 @@ text = "CLOSE"
 [connection signal="screen_entered" from="Notifier" to="." method="_generate_next_fort"]
 [connection signal="block_distance" from="Player" to="CanvasLayer/UI/Labels/Score" method="set_score"]
 [connection signal="timeout" from="CanvasLayer/UI/Labels/TimeLeft/GameTimer" to="Player" method="die"]
+[connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/Labels/TimeLeft/GameTimer" method="start"]
+[connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/ColorRect" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/Container" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/Title" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/LegalLabel" method="show"]

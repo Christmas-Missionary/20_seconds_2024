@@ -15,6 +15,7 @@ func _ready() -> void:
 	var tilelayer: = $BlockLayer as TileMapLayer
 	for i: int in range(2, 526): # 20 seconds of just running
 		tilelayer.set_cell(Vector2(i, -1), 1, Vector2i.ZERO)
+	get_tree().set_pause(true)
 
 @onready var _notifier: = $Notifier as VisibleOnScreenNotifier2D
 func _generate_next_fort() -> void:
