@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xklqs8rijipx"
-path="res://.godot/imported/block.png-342c34678ea4291528f854f735e78a80.ctex"
+path="res://.godot/imported/sand_block.png-a3c8b7ff358d37ce80d79f40c483ae60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/block.png"
-dest_files=["res://.godot/imported/block.png-342c34678ea4291528f854f735e78a80.ctex"]
+source_file="res://assets/images/sand_block.png"
+dest_files=["res://.godot/imported/sand_block.png-a3c8b7ff358d37ce80d79f40c483ae60.ctex"]
 
 [params]
 
