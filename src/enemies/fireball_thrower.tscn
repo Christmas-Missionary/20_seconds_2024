@@ -1,11 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmr4gtup2a1ri"]
 
 [ext_resource type="Script" path="res://src/enemies/fireball_thrower.gd" id="1_shclj"]
-[ext_resource type="Texture2D" uid="uid://2ord8seuk8hn" path="res://assets/images/square.png" id="2_bgkpw"]
+[ext_resource type="Texture2D" uid="uid://dc3nopqwoexs8" path="res://assets/images/Fire_thrower1.png" id="2_auw6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8q0yy"]
 
 [node name="FireballThrower" type="RigidBody2D"]
+texture_filter = 1
 lock_rotation = true
 script = ExtResource("1_shclj")
 
@@ -22,7 +23,6 @@ autostart = true
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.701961, 0.337255, 0, 1)
-texture = ExtResource("2_bgkpw")
+texture = ExtResource("2_auw6u")
 
 [connection signal="timeout" from="Timer" to="." method="_emit_fireball"]

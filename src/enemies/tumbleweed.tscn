@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" path="res://src/enemies/tumbleweed.gd" id="1_myf8d"]
 [ext_resource type="Shape2D" uid="uid://d0ig8pbvic6xe" path="res://assets/tumbleweed_coll.tres" id="2_pu7ch"]
-[ext_resource type="Texture2D" uid="uid://cy3emxlo583qm" path="res://assets/images/ball.png" id="3_qe8vo"]
+[ext_resource type="Texture2D" uid="uid://c8rtn4rcviron" path="res://assets/images/tumbleweed1.png" id="3_rglsa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r13ms"]
 radius = 11.0
 
 [node name="Tumbleweed" type="CharacterBody2D"]
 process_mode = 4
+texture_filter = 1
 collision_layer = 12
 collision_mask = 3
 script = ExtResource("1_myf8d")
@@ -28,8 +29,6 @@ debug_color = Color(0.701961, 0, 0.0117647, 0.419608)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.701961, 0, 0.0117647, 1)
-scale = Vector2(2, 2)
-texture = ExtResource("3_qe8vo")
+texture = ExtResource("3_rglsa")
 
 [connection signal="body_entered" from="Area" to="." method="_check_body"]
