@@ -69,4 +69,4 @@ Pause={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.3003, 0.762172, 0.77, 1)
+environment/defaults/default_clear_color=Color(0, 0.725, 0.87, 1)
