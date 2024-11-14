@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=12 format=4 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player.tscn" id="1_tolmm"]
 [ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="2_h45d6"]
 [ext_resource type="FontFile" uid="uid://bgd7dbp83hddp" path="res://assets/fonts/BitPotionExt.ttf" id="4_2bdr6"]
 [ext_resource type="Script" path="res://src/main/time_left_label.gd" id="4_61toc"]
+[ext_resource type="Texture2D" uid="uid://r5ehy6c4gt4k" path="res://assets/images/sun.png" id="4_si4jm"]
 [ext_resource type="Script" path="res://src/main/score_label.gd" id="5_ogntn"]
 [ext_resource type="Script" path="res://src/main/game_timer.gd" id="6_6u3n4"]
 [ext_resource type="Script" path="res://src/main/high_score_label.gd" id="6_uqvrq"]
@@ -18,6 +19,14 @@ script = ExtResource("1_nanye")
 metadata/_edit_lock_ = true
 metadata/_edit_vertical_guides_ = [800.0, 900.0, 700.0]
 metadata/_edit_horizontal_guides_ = [525.0, 625.0]
+
+[node name="SunLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sun" type="Sprite2D" parent="SunLayer"]
+position = Vector2(53, 84)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_si4jm")
 
 [node name="Notifier" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(1150, -150)
