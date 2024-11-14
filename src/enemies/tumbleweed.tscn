@@ -7,7 +7,7 @@
 radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r13ms"]
-radius = 11.0
+radius = 12.0
 
 [node name="Tumbleweed" type="CharacterBody2D"]
 process_mode = 4
