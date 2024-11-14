@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://oilqnix2sn8h"]
 
 [ext_resource type="Script" path="res://src/main/player.gd" id="1_cuihl"]
-[ext_resource type="Texture2D" uid="uid://2ord8seuk8hn" path="res://assets/images/square.png" id="1_ss40o"]
+[ext_resource type="Texture2D" uid="uid://dwn4srm256xxy" path="res://assets/images/player.png" id="2_11bah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0re3"]
 size = Vector2(19, 19)
@@ -17,7 +17,7 @@ shape = SubResource("RectangleShape2D_f0re3")
 metadata/_edit_lock_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_ss40o")
+texture = ExtResource("2_11bah")
 metadata/_edit_lock_ = true
 
 [node name="Camera" type="Camera2D" parent="."]
