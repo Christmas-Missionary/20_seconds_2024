@@ -1,6 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://ry2qfpfm5skp"]
+[gd_scene load_steps=5 format=3 uid="uid://ry2qfpfm5skp"]
 
 [ext_resource type="Script" path="res://src/enemies/dust_devil.gd" id="1_406bl"]
+[ext_resource type="Texture2D" uid="uid://cmu3cmii22qod" path="res://assets/images/cloud2.png" id="2_mq41l"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fgtfx"]
+lifetime_randomness = 0.24
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_max = 40.0
+orbit_velocity_min = 1.0
+orbit_velocity_max = 1.0
+radial_velocity_min = 15.0
+radial_velocity_max = 15.0
+gravity = Vector3(200, -12, 0)
+color = Color(0.72, 0.47988, 0.2232, 1)
+hue_variation_min = -0.08
+hue_variation_max = 0.15
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p3wba"]
 lifetime_randomness = 0.24
@@ -9,8 +24,8 @@ spread = 180.0
 initial_velocity_max = 40.0
 orbit_velocity_min = 1.0
 orbit_velocity_max = 1.0
-radial_velocity_min = 9.99998
-radial_velocity_max = 9.99998
+radial_velocity_min = 15.0
+radial_velocity_max = 15.0
 gravity = Vector3(98, -18, 0)
 scale_min = 7.0
 scale_max = 7.0
@@ -18,18 +33,24 @@ color = Color(0.72, 0.47988, 0.2232, 1)
 hue_variation_min = -0.08
 hue_variation_max = 0.15
 
-[node name="DustDevil" type="Area2D"]
-collision_mask = 8
+[node name="DustDevil" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_406bl")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(1, 25, 37, -195, -55, -197)
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="Clouds" type="GPUParticles2D" parent="."]
+modulate = Color(0.576471, 0.317647, 0.172549, 1)
 amount = 80
+process_material = SubResource("ParticleProcessMaterial_fgtfx")
+texture = ExtResource("2_mq41l")
+lifetime = 7.0
+speed_scale = 2.0
+interpolate = false
+
+[node name="Rocks" type="GPUParticles2D" parent="."]
+amount = 200
 process_material = SubResource("ParticleProcessMaterial_p3wba")
 lifetime = 12.0
-preprocess = 12.0
+speed_scale = 2.0
 interpolate = false
 
 [node name="Timer" type="Timer" parent="."]
@@ -41,5 +62,4 @@ autostart = true
 position = Vector2(0, -90)
 scale = Vector2(7, 11.5)
 
-[connection signal="body_entered" from="." to="." method="_check_body"]
 [connection signal="timeout" from="Timer" to="." method="queue_free"]
