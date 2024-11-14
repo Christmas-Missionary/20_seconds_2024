@@ -9,6 +9,12 @@ const size: int = 3
 
 signal request_pause
 
+func _new_cloud_sprite() -> CompressedTexture2D:
+	var val: float = randf()
+	return (preload("res://assets/images/cloud1.png") if val < 0.45 else 
+			preload("res://assets/images/cloud2.png") if val < 0.98 else 
+			preload("res://assets/images/cloud3.png"))
+
 func _ready() -> void:
 	var fort: = _ALL_FORTS[randi() % size].instantiate() as Node2D
 	add_child(fort)
@@ -18,6 +24,14 @@ func _ready() -> void:
 	for i: int in range(2, 526): # 20 seconds of just running
 		tilelayer.set_cell(Vector2(i, -1), 1, Vector2i.ZERO)
 	get_tree().set_pause(true)
+	
+	var x_pos: int = 0
+	while (x_pos < 10520):
+		x_pos += randf_range(200, 400)
+		var sprite: = Sprite2D.new()
+		add_child(sprite)
+		sprite.texture = _new_cloud_sprite()
+		sprite.position = Vector2(x_pos, randf_range(-240, -280))
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"Pause"):
