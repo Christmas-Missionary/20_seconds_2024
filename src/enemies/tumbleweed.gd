@@ -10,6 +10,7 @@ func _ready() -> void:
 	set_process_mode(Node.PROCESS_MODE_DISABLED)
 
 func _physics_process(delta: float) -> void:
+	rotate((TAU / 90) * signf(horizontal.x))
 	if !is_wall_climbing:
 		velocity.y = 0.0 if is_on_floor() else velocity.y + (_GRAVITY * delta)
 		if is_on_wall():
