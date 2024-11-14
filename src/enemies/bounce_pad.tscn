@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvpnmfb71jgxd"]
 
 [ext_resource type="Script" path="res://src/enemies/bounce_pad.gd" id="1_uamck"]
-[ext_resource type="Texture2D" uid="uid://2ord8seuk8hn" path="res://assets/images/square.png" id="2_78xf1"]
+[ext_resource type="Texture2D" uid="uid://duqhqx5vbe3fw" path="res://assets/images/bounce_pad1.png" id="2_8yyq5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkaxx"]
 size = Vector2(20, 5)
@@ -10,6 +10,7 @@ size = Vector2(20, 5)
 size = Vector2(22, 6)
 
 [node name="BouncePad" type="RigidBody2D"]
+texture_filter = 1
 collision_layer = 13
 collision_mask = 9
 lock_rotation = true
@@ -31,9 +32,7 @@ debug_color = Color(0.315, 0, 0.7, 0.419608)
 scale = Vector2(1.2, 5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.313726, 0, 0.701961, 1)
 position = Vector2(-5.96046e-08, 0)
-scale = Vector2(1.1, 0.3)
-texture = ExtResource("2_78xf1")
+texture = ExtResource("2_8yyq5")
 
 [connection signal="body_entered" from="Area2D" to="." method="_bounce_thing"]
