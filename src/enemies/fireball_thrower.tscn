@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmr4gtup2a1ri"]
 
 [ext_resource type="Script" path="res://src/enemies/fireball_thrower.gd" id="1_shclj"]
-[ext_resource type="Texture2D" uid="uid://dc3nopqwoexs8" path="res://assets/images/Fire_thrower1.png" id="2_auw6u"]
+[ext_resource type="Texture2D" uid="uid://dc3nopqwoexs8" path="res://assets/images/fire_thrower1.png" id="2_auw6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8q0yy"]
 
@@ -14,15 +14,21 @@ script = ExtResource("1_shclj")
 shape = SubResource("RectangleShape2D_8q0yy")
 debug_color = Color(0.7, 0.338333, 0, 0.419608)
 
-[node name="Timer" type="Timer" parent="."]
-process_callback = 0
-wait_time = 1.2
-autostart = true
-
 [node name="Enabler" type="VisibleOnScreenEnabler2D" parent="."]
 scale = Vector2(2, 2)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_auw6u")
 
-[connection signal="timeout" from="Timer" to="." method="_emit_fireball"]
+[node name="FireTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+
+[node name="RestTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.9
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="RestTimer" to="." method="_emit_fireball"]
