@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=13 format=4 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player.tscn" id="1_tolmm"]
+[ext_resource type="Script" path="res://src/main/cloud_layer.gd" id="2_2tnbl"]
 [ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="2_h45d6"]
 [ext_resource type="FontFile" uid="uid://bgd7dbp83hddp" path="res://assets/fonts/BitPotionExt.ttf" id="4_2bdr6"]
 [ext_resource type="Script" path="res://src/main/time_left_label.gd" id="4_61toc"]
@@ -19,6 +20,9 @@ script = ExtResource("1_nanye")
 metadata/_edit_lock_ = true
 metadata/_edit_vertical_guides_ = [800.0, 900.0, 700.0]
 metadata/_edit_horizontal_guides_ = [525.0, 625.0]
+
+[node name="CloudLayer" type="Node2D" parent="."]
+script = ExtResource("2_2tnbl")
 
 [node name="SunLayer" type="CanvasLayer" parent="."]
 layer = -1
