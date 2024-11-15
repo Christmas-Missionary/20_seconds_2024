@@ -23,14 +23,14 @@ debug_color = Color(0.7, 0, 0.0116665, 0.419608)
 [node name="Area" type="Area2D" parent="."]
 collision_mask = 8
 
-[node name="AreaCollision" type="CollisionShape2D" parent="Area"]
+[node name="Collision" type="CollisionShape2D" parent="Area"]
 shape = SubResource("CircleShape2D_r13ms")
 debug_color = Color(0.701961, 0, 0.0117647, 0.419608)
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+[node name="Enabler" type="VisibleOnScreenEnabler2D" parent="."]
 scale = Vector2(2, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("3_rglsa")
 
 [connection signal="body_entered" from="Area" to="." method="_check_body"]

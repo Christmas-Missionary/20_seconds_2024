@@ -10,7 +10,7 @@ texture_filter = 1
 lock_rotation = true
 script = ExtResource("1_shclj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8q0yy")
 debug_color = Color(0.7, 0.338333, 0, 0.419608)
 
@@ -19,10 +19,10 @@ process_callback = 0
 wait_time = 1.2
 autostart = true
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+[node name="Enabler" type="VisibleOnScreenEnabler2D" parent="."]
 scale = Vector2(2, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_auw6u")
 
 [connection signal="timeout" from="Timer" to="." method="_emit_fireball"]
