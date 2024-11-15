@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddpxyp3sodbri"]
+[gd_scene load_steps=7 format=3 uid="uid://ddpxyp3sodbri"]
 
 [ext_resource type="Script" path="res://src/enemies/fireball.gd" id="1_w4kov"]
 [ext_resource type="Texture2D" uid="uid://df7dej1kqfdev" path="res://assets/images/fireball1.png" id="2_kk1mo"]
+[ext_resource type="Script" path="res://src/enemies/sprite.gd" id="3_hpqmp"]
+[ext_resource type="Texture2D" uid="uid://bb7h5gyup60mb" path="res://assets/images/fireball2.png" id="4_kc346"]
+[ext_resource type="Texture2D" uid="uid://b0v5i3bb5dvel" path="res://assets/images/fireball3.png" id="5_utvmi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_faevp"]
 
@@ -20,7 +23,8 @@ wait_time = 5.0
 autostart = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_kk1mo")
+script = ExtResource("3_hpqmp")
+sprites = Array[CompressedTexture2D]([ExtResource("2_kk1mo"), ExtResource("4_kc346"), ExtResource("5_utvmi")])
 
 [connection signal="body_entered" from="." to="." method="_check_body"]
 [connection signal="timeout" from="Timer" to="." method="queue_free"]

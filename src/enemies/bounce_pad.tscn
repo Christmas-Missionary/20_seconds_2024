@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvpnmfb71jgxd"]
+[gd_scene load_steps=7 format=3 uid="uid://dvpnmfb71jgxd"]
 
 [ext_resource type="Script" path="res://src/enemies/bounce_pad.gd" id="1_uamck"]
 [ext_resource type="Texture2D" uid="uid://duqhqx5vbe3fw" path="res://assets/images/bounce_pad1.png" id="2_8yyq5"]
+[ext_resource type="Script" path="res://src/enemies/sprite.gd" id="3_bbeat"]
+[ext_resource type="Texture2D" uid="uid://dxe330fmoqapc" path="res://assets/images/bounce_pad2.png" id="4_vi4hx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkaxx"]
 size = Vector2(20, 5)
@@ -33,6 +35,7 @@ scale = Vector2(1.2, 5)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(-5.96046e-08, 0)
-texture = ExtResource("2_8yyq5")
+script = ExtResource("3_bbeat")
+sprites = Array[CompressedTexture2D]([ExtResource("2_8yyq5"), ExtResource("4_vi4hx")])
 
 [connection signal="body_entered" from="Area" to="." method="_bounce_thing"]
