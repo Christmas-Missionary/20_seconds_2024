@@ -12,3 +12,4 @@ func _ready() -> void:
 			preload("res://assets/images/cloud2.png") if val < 0.98 else 
 			preload("res://assets/images/cloud3.png"))
 		sprite.position = Vector2(x_pos, randf_range(-240, -280))
+		sprite.rotation = randf_range(0, TAU)
