@@ -1,65 +1,69 @@
-[gd_scene load_steps=5 format=3 uid="uid://ry2qfpfm5skp"]
+[gd_scene load_steps=4 format=3 uid="uid://ry2qfpfm5skp"]
 
 [ext_resource type="Script" path="res://src/enemies/dust_devil.gd" id="1_406bl"]
 [ext_resource type="Texture2D" uid="uid://cmu3cmii22qod" path="res://assets/images/cloud2.png" id="2_mq41l"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fgtfx"]
-lifetime_randomness = 0.24
-particle_flag_disable_z = true
-spread = 180.0
-initial_velocity_max = 40.0
-orbit_velocity_min = 1.0
-orbit_velocity_max = 1.0
-radial_velocity_min = 15.0
-radial_velocity_max = 15.0
-gravity = Vector3(200, -12, 0)
-color = Color(0.72, 0.47988, 0.2232, 1)
-hue_variation_min = -0.08
-hue_variation_max = 0.15
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p3wba"]
-lifetime_randomness = 0.24
-particle_flag_disable_z = true
-spread = 180.0
-initial_velocity_max = 40.0
-orbit_velocity_min = 1.0
-orbit_velocity_max = 1.0
-radial_velocity_min = 15.0
-radial_velocity_max = 15.0
-gravity = Vector3(98, -18, 0)
-scale_min = 7.0
-scale_max = 7.0
-color = Color(0.72, 0.47988, 0.2232, 1)
-hue_variation_min = -0.08
-hue_variation_max = 0.15
+[sub_resource type="Gradient" id="Gradient_1t2r5"]
+offsets = PackedFloat32Array(0.169096, 0.781341)
 
 [node name="DustDevil" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_406bl")
 
-[node name="Clouds" type="GPUParticles2D" parent="."]
+[node name="Clouds" type="CPUParticles2D" parent="."]
 modulate = Color(0.576471, 0.317647, 0.172549, 1)
-amount = 80
-process_material = SubResource("ParticleProcessMaterial_fgtfx")
+amount = 140
+lifetime = 10.0
+preprocess = 10.0
+speed_scale = 2.0
+randomness = 0.2
 texture = ExtResource("2_mq41l")
-lifetime = 7.0
-speed_scale = 2.0
-interpolate = false
+emission_shape = 3
+emission_rect_extents = Vector2(20, 20)
+spread = 180.0
+gravity = Vector2(90, -15)
+initial_velocity_max = 85.66
+orbit_velocity_min = 0.5
+orbit_velocity_max = 0.6
+linear_accel_min = 20.0
+linear_accel_max = 40.0
+radial_accel_min = 10.0
+radial_accel_max = 10.0
+tangential_accel_max = 100.0
+scale_amount_min = 1.25
+scale_amount_max = 2.6
+color = Color(0.721569, 0.478431, 0.223529, 1)
+hue_variation_min = -0.08
+hue_variation_max = 0.15
 
-[node name="Rocks" type="GPUParticles2D" parent="."]
+[node name="Rocks" type="CPUParticles2D" parent="."]
 amount = 200
-process_material = SubResource("ParticleProcessMaterial_p3wba")
-lifetime = 12.0
+lifetime = 6.0
+preprocess = 6.0
 speed_scale = 2.0
-interpolate = false
+randomness = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(20, 20)
+spread = 180.0
+gravity = Vector2(200, -20)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+angular_velocity_min = 360.0
+angular_velocity_max = 720.0
+orbit_velocity_min = 0.3
+orbit_velocity_max = 0.48
+scale_amount_min = 5.0
+scale_amount_max = 12.0
+color = Color(0.721569, 0.478431, 0.223529, 1)
+color_ramp = SubResource("Gradient_1t2r5")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 5.0
+wait_time = 8.0
 autostart = true
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(0, -90)
-scale = Vector2(7, 11.5)
+position = Vector2(-120, -90)
+scale = Vector2(19, 11.5)
 
 [connection signal="timeout" from="Timer" to="." method="queue_free"]
