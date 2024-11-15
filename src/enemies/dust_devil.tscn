@@ -63,7 +63,7 @@ wait_time = 8.0
 autostart = true
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(-120, -90)
-scale = Vector2(19, 11.5)
+position = Vector2(0.999992, -90)
+scale = Vector2(39.1, 11.5)
 
 [connection signal="timeout" from="Timer" to="." method="queue_free"]
