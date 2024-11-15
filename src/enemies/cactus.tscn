@@ -18,18 +18,18 @@ script = ExtResource("1_v2ayh")
 shape = SubResource("RectangleShape2D_0nfw2")
 debug_color = Color(0, 0.7, 0, 0.419608)
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+[node name="Enabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 position = Vector2(0, -0.500001)
 scale = Vector2(1, 5)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area" type="Area2D" parent="."]
 collision_mask = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Collision" type="CollisionShape2D" parent="Area"]
 shape = SubResource("RectangleShape2D_8dxus")
 debug_color = Color(0.378178, 0.607058, 0.26442, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_wko34")
 
-[connection signal="body_entered" from="Area2D" to="." method="_check_body"]
+[connection signal="body_entered" from="Area" to="." method="_check_body"]
