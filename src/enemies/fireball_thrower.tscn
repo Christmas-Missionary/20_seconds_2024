@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://src/enemies/fireball_thrower.gd" id="1_shclj"]
 [ext_resource type="Texture2D" uid="uid://dc3nopqwoexs8" path="res://assets/images/fire_thrower1.png" id="2_auw6u"]
-[ext_resource type="AudioStream" uid="uid://cmwwc6gtlqv5b" path="res://assets/sfx/fireball_throwing.wav" id="2_q86ki"]
+[ext_resource type="AudioStream" uid="uid://c71pwwjfrahvi" path="res://assets/sfx/fireball_thrower.wav" id="2_lkc3y"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6on1h"]
 random_pitch = 1.1
 streams_count = 1
-stream_0/stream = ExtResource("2_q86ki")
+stream_0/stream = ExtResource("2_lkc3y")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8q0yy"]
 

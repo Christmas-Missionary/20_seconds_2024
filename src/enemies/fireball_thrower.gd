@@ -11,9 +11,9 @@ const _OTHER_SPRITE: CompressedTexture2D = preload("res://assets/images/fire_thr
 
 func _emit_fireball() -> void:
 	_sprite.texture = _OTHER_SPRITE
-	_fire_timer.start(0.49)
-	_audio.play()
+	_fire_timer.start(0.5)
 	await _fire_timer.timeout
+	_audio.play()
 	_rest_timer.start(randf_range(0.3, 0.9))
 	var ball: = _FIREBALL.instantiate() as Fireball
 	add_sibling(ball)
