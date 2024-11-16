@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://src/main/ui/high_score_label.gd" id="6_uqvrq"]
 [ext_resource type="Script" path="res://src/main/ui/play_button.gd" id="8_0emv5"]
 [ext_resource type="Script" path="res://src/main/ui/legal_text.gd" id="8_wbmt4"]
-[ext_resource type="AudioStream" uid="uid://dr742268p27dt" path="res://assets/sfx/ui_hover.wav" id="11_v3mo6"]
+[ext_resource type="AudioStream" uid="uid://bj61b7fx2dw8" path="res://assets/sfx/ui_hover.wav" id="11_v3mo6"]
 [ext_resource type="Script" path="res://src/main/ui/option_slider_label.gd" id="12_0efet"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lrd1q"]
