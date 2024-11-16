@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-HighScore="*res://high_score.gd"
+HighScore="*res://src/high_score.gd"
 
 [display]
 
