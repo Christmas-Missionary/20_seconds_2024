@@ -26,11 +26,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 @onready var _notifier: = $Notifier as VisibleOnScreenNotifier2D
 func _generate_next_fort() -> void:
-	var start: int = Time.get_ticks_usec()
-	
 	var fort: = _ALL_FORTS[randi() % size].instantiate() as Node2D
 	add_child(fort)
 	fort.position = _notifier.position + Vector2(-150, 150)
 	_notifier.position.x += 500
-	
-	print(Time.get_ticks_usec() - start)
