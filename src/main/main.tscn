@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=14 format=4 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player.tscn" id="1_tolmm"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://src/main/high_score_label.gd" id="6_uqvrq"]
 [ext_resource type="Script" path="res://src/main/play.gd" id="8_0emv5"]
 [ext_resource type="Script" path="res://src/main/legal_text.gd" id="8_wbmt4"]
+[ext_resource type="Script" path="res://src/main/option_slider_label.gd" id="12_0efet"]
 
 [node name="Main" type="Node2D"]
 process_mode = 1
@@ -96,8 +97,8 @@ script = ExtResource("6_uqvrq")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI"]
 layout_mode = 0
-offset_left = 400.0
-offset_top = 100.0
+offset_left = 380.0
+offset_top = 80.0
 offset_right = 1200.0
 offset_bottom = 650.0
 color = Color(0, 0, 0, 1)
@@ -137,26 +138,42 @@ theme_override_fonts/font = ExtResource("4_2bdr6")
 theme_override_font_sizes/font_size = 48
 text = "Automatic Respawn"
 
-[node name="Music" type="CheckButton" parent="CanvasLayer/UI/ColorRect/Container/Options"]
+[node name="MusicLabel" type="RichTextLabel" parent="CanvasLayer/UI/ColorRect/Container/Options"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("4_2bdr6")
-theme_override_font_sizes/font_size = 48
-button_pressed = true
-text = "Music"
+size_flags_stretch_ratio = 0.5
+theme_override_fonts/normal_font = ExtResource("4_2bdr6")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Music Volume - 50"
+script = ExtResource("12_0efet")
+binded_text = "[center]Music Volume - "
 
-[node name="SFX" type="CheckButton" parent="CanvasLayer/UI/ColorRect/Container/Options"]
+[node name="Music" type="HSlider" parent="CanvasLayer/UI/ColorRect/Container/Options"]
+layout_mode = 2
+size_flags_vertical = 2
+value = 50.0
+
+[node name="SFXLabel" type="RichTextLabel" parent="CanvasLayer/UI/ColorRect/Container/Options"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("4_2bdr6")
-theme_override_font_sizes/font_size = 48
-button_pressed = true
-text = "Sound Effects"
+size_flags_stretch_ratio = 0.5
+theme_override_fonts/normal_font = ExtResource("4_2bdr6")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]SFX Volume - 50"
+script = ExtResource("12_0efet")
+binded_text = "[center]SFX Volume - "
+
+[node name="SFX" type="HSlider" parent="CanvasLayer/UI/ColorRect/Container/Options"]
+layout_mode = 2
+size_flags_vertical = 2
+value = 50.0
 
 [node name="Title" type="RichTextLabel" parent="CanvasLayer/UI/ColorRect"]
 layout_mode = 0
 offset_top = 439.0
-offset_right = 800.0
+offset_right = 820.0
 offset_bottom = 550.0
 theme_override_fonts/normal_font = ExtResource("4_2bdr6")
 theme_override_font_sizes/normal_font_size = 64
@@ -194,6 +211,8 @@ text = "CLOSE"
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/Title" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/LegalLabel" method="show"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/CloseButton" method="show"]
+[connection signal="value_changed" from="CanvasLayer/UI/ColorRect/Container/Options/Music" to="CanvasLayer/UI/ColorRect/Container/Options/MusicLabel" method="_change_text"]
+[connection signal="value_changed" from="CanvasLayer/UI/ColorRect/Container/Options/SFX" to="CanvasLayer/UI/ColorRect/Container/Options/SFXLabel" method="_change_text"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/CloseButton" to="CanvasLayer/UI/ColorRect/Container" method="show"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/CloseButton" to="CanvasLayer/UI/ColorRect/Title" method="show"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/CloseButton" to="CanvasLayer/UI/ColorRect/LegalLabel" method="hide"]
