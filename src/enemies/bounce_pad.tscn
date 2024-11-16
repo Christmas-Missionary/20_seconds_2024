@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvpnmfb71jgxd"]
+[gd_scene load_steps=9 format=3 uid="uid://dvpnmfb71jgxd"]
 
 [ext_resource type="Script" path="res://src/enemies/bounce_pad.gd" id="1_uamck"]
 [ext_resource type="Texture2D" uid="uid://duqhqx5vbe3fw" path="res://assets/images/bounce_pad1.png" id="2_8yyq5"]
 [ext_resource type="Script" path="res://src/enemies/sprite.gd" id="3_bbeat"]
 [ext_resource type="Texture2D" uid="uid://dxe330fmoqapc" path="res://assets/images/bounce_pad2.png" id="4_vi4hx"]
+[ext_resource type="AudioStream" uid="uid://byxc1rqujys6x" path="res://assets/sfx/bounce_pad.wav" id="5_oeain"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hij68"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("5_oeain")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkaxx"]
 size = Vector2(20, 5)
@@ -17,6 +23,10 @@ collision_layer = 13
 collision_mask = 9
 lock_rotation = true
 script = ExtResource("1_uamck")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_hij68")
+bus = &"SFX"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tkaxx")

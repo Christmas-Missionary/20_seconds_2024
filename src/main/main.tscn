@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=16 format=4 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player.tscn" id="1_tolmm"]
@@ -12,7 +12,13 @@
 [ext_resource type="Script" path="res://src/main/ui/high_score_label.gd" id="6_uqvrq"]
 [ext_resource type="Script" path="res://src/main/ui/play_button.gd" id="8_0emv5"]
 [ext_resource type="Script" path="res://src/main/ui/legal_text.gd" id="8_wbmt4"]
+[ext_resource type="AudioStream" uid="uid://dr742268p27dt" path="res://assets/sfx/ui_hover.wav" id="11_v3mo6"]
 [ext_resource type="Script" path="res://src/main/ui/option_slider_label.gd" id="12_0efet"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lrd1q"]
+random_pitch = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("11_v3mo6")
 
 [node name="Main" type="Node2D"]
 process_mode = 1
@@ -102,6 +108,9 @@ offset_top = 80.0
 offset_right = 1200.0
 offset_bottom = 650.0
 color = Color(0, 0, 0, 1)
+
+[node name="HoverPlayer" type="AudioStreamPlayer" parent="CanvasLayer/UI/ColorRect"]
+stream = SubResource("AudioStreamRandomizer_lrd1q")
 
 [node name="Container" type="HBoxContainer" parent="CanvasLayer/UI/ColorRect"]
 layout_mode = 0
@@ -205,14 +214,20 @@ text = "CLOSE"
 [connection signal="screen_entered" from="Notifier" to="." method="_generate_next_fort"]
 [connection signal="block_distance" from="Player" to="CanvasLayer/UI/Labels/Score" method="set_score"]
 [connection signal="timeout" from="CanvasLayer/UI/Labels/TimeLeft/GameTimer" to="Player" method="die"]
+[connection signal="mouse_entered" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/ColorRect/HoverPlayer" method="play"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/ColorRect" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/Labels/TimeLeft/GameTimer" method="set_paused" binds= [false]]
+[connection signal="mouse_entered" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/HoverPlayer" method="play"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/Container" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/Title" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/LegalLabel" method="show"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/CloseButton" method="show"]
+[connection signal="mouse_entered" from="CanvasLayer/UI/ColorRect/Container/Options/AutoRespawn" to="CanvasLayer/UI/ColorRect/HoverPlayer" method="play"]
+[connection signal="mouse_entered" from="CanvasLayer/UI/ColorRect/Container/Options/Music" to="CanvasLayer/UI/ColorRect/HoverPlayer" method="play"]
 [connection signal="value_changed" from="CanvasLayer/UI/ColorRect/Container/Options/Music" to="CanvasLayer/UI/ColorRect/Container/Options/MusicLabel" method="_change_text"]
+[connection signal="mouse_entered" from="CanvasLayer/UI/ColorRect/Container/Options/SFX" to="CanvasLayer/UI/ColorRect/HoverPlayer" method="play"]
 [connection signal="value_changed" from="CanvasLayer/UI/ColorRect/Container/Options/SFX" to="CanvasLayer/UI/ColorRect/Container/Options/SFXLabel" method="_change_text"]
+[connection signal="mouse_entered" from="CanvasLayer/UI/ColorRect/CloseButton" to="CanvasLayer/UI/ColorRect/HoverPlayer" method="play"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/CloseButton" to="CanvasLayer/UI/ColorRect/Container" method="show"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/CloseButton" to="CanvasLayer/UI/ColorRect/Title" method="show"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/CloseButton" to="CanvasLayer/UI/ColorRect/LegalLabel" method="hide"]

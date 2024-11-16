@@ -4,6 +4,9 @@ const _SPEED: int = 50
 
 var is_wall_climbing: bool = false
 var horizontal: Vector2 = Vector2(-_SPEED, 0)
+var _last_velocity_y: float = 0.0
+
+@onready var _audio: = $AudioPlayer as AudioStreamPlayer2D
 
 func _ready() -> void:
 	velocity = horizontal
@@ -21,6 +24,9 @@ func _physics_process(delta: float) -> void:
 			is_wall_climbing = false
 			horizontal = -horizontal
 			velocity = horizontal
+	if is_on_floor() and _last_velocity_y:
+		_audio.play()
+	_last_velocity_y = velocity.y
 	move_and_slide()
 
 func _check_body(body: Node2D) -> void:
