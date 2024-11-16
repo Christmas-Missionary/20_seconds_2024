@@ -23,7 +23,9 @@ var jump_status: _JUMP_STATES = _JUMP_STATES.NONE:
 			time_since_jump_press = 0.0
 
 const _VIEWPORT_QUARTER_WIDTH: int = 300
+
 @onready var _camera: = $Camera as Camera2D
+@onready var _jump_player: = $JumpPlayer as AudioStreamPlayer2D
 
 signal block_distance(val: int)
 
@@ -41,11 +43,13 @@ func _physics_process(delta: float):
 	if jump_status == _JUMP_STATES.READY:
 		velocity.y = -_JUMP_FORCE
 		_num_of_jumps += 1
+		_jump_player.play()
 		jump_status = _JUMP_STATES.NONE
 	elif Input.is_action_just_pressed(&"Jump"):
 		if _num_of_jumps < 2:
 			velocity.y = -_JUMP_FORCE
 			_num_of_jumps += 1
+			_jump_player.play()
 		else:
 			jump_status = _JUMP_STATES.QUEUE
 	elif is_on_floor():

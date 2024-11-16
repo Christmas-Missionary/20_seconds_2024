@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ry2qfpfm5skp"]
+[gd_scene load_steps=6 format=3 uid="uid://ry2qfpfm5skp"]
 
 [ext_resource type="Script" path="res://src/enemies/dust_devil.gd" id="1_406bl"]
 [ext_resource type="Texture2D" uid="uid://cmu3cmii22qod" path="res://assets/images/cloud2.png" id="2_mq41l"]
+[ext_resource type="AudioStream" uid="uid://hcknlxychdcx" path="res://assets/sfx/dust_devil.wav" id="3_umoxp"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_awn3k"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("3_umoxp")
 
 [sub_resource type="Gradient" id="Gradient_1t2r5"]
 offsets = PackedFloat32Array(0.169096, 0.781341)
@@ -9,6 +15,11 @@ offsets = PackedFloat32Array(0.169096, 0.781341)
 [node name="DustDevil" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_406bl")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_awn3k")
+autoplay = true
+bus = &"SFX"
 
 [node name="Clouds" type="CPUParticles2D" parent="."]
 modulate = Color(0.576471, 0.317647, 0.172549, 1)
@@ -62,7 +73,7 @@ process_callback = 0
 wait_time = 8.0
 autostart = true
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+[node name="Enabler" type="VisibleOnScreenEnabler2D" parent="."]
 position = Vector2(0.999992, -90)
 scale = Vector2(39.1, 11.5)
 
