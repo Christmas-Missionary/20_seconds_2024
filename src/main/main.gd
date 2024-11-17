@@ -17,7 +17,6 @@ func _ready() -> void:
 	var tilelayer: = $BlockLayer as TileMapLayer
 	for i: int in range(2, 526): # 20 seconds of just running
 		tilelayer.set_cell(Vector2(i, -1), 1, Vector2i.ZERO)
-	get_tree().set_pause(true)
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"Pause"):
