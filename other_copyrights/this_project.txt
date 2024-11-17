@@ -3,7 +3,7 @@ detailing where the asset is, where it came from, its copyright, and its license
 If the file path starts with a '/', it is a path relative to the top directory of the repo, 20_seconds_2024.
 
 
-File: /assets/fonts/BitPotionExt.ttf
+File: /assets/fonts/bit_potion_ext.ttf
 Source: https://joebrogers.itch.io/bitpotion
 Copyright: 2019, Joeb Rogers
 License: CC-BY-4.0
