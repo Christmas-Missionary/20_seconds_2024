@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=17 format=4 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player.tscn" id="1_tolmm"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://src/main/ui/time_left_label.gd" id="4_61toc"]
 [ext_resource type="Texture2D" uid="uid://r5ehy6c4gt4k" path="res://assets/images/sun.png" id="4_si4jm"]
 [ext_resource type="Script" path="res://src/main/ui/score_label.gd" id="5_ogntn"]
-[ext_resource type="Script" path="res://src/main/ui/game_timer.gd" id="6_6u3n4"]
 [ext_resource type="Script" path="res://src/main/ui/high_score_label.gd" id="6_uqvrq"]
 [ext_resource type="Script" path="res://src/main/ui/play_button.gd" id="8_0emv5"]
 [ext_resource type="Script" path="res://src/main/ui/legal_text.gd" id="8_wbmt4"]
@@ -87,7 +86,7 @@ script = ExtResource("4_61toc")
 process_callback = 0
 wait_time = 20.0
 one_shot = true
-script = ExtResource("6_6u3n4")
+autostart = true
 
 [node name="Score" type="RichTextLabel" parent="CanvasLayer/UI/Labels"]
 layout_mode = 2

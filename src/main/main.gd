@@ -5,12 +5,12 @@ const _ALL_FORTS: Array[PackedScene] = [
 	preload("res://src/forts/fort_two.tscn"),
 	preload("res://src/forts/fort_three.tscn"),
 ]
-const size: int = 3
+const _SIZE: int = 3
 
 signal request_pause
 
 func _ready() -> void:
-	var fort: = _ALL_FORTS[randi() % size].instantiate() as Node2D
+	var fort: = _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
 	add_child(fort)
 	fort.position = Vector2(500, 0)
 	
@@ -25,7 +25,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 @onready var _notifier: = $Notifier as VisibleOnScreenNotifier2D
 func _generate_next_fort() -> void:
-	var fort: = _ALL_FORTS[randi() % size].instantiate() as Node2D
+	var fort: = _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
 	add_child(fort)
 	fort.position = _notifier.position + Vector2(-150, 150)
 	_notifier.position.x += 500

@@ -5,5 +5,4 @@ func _ready() -> void:
 	if GameStats.is_respawning_automatically:
 		pressed.emit()
 	else:
-		await get_tree().process_frame
 		get_tree().set_pause(true)

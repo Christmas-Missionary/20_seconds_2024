@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/enemies/fireball.gd" id="1_w4kov"]
 [ext_resource type="Texture2D" uid="uid://df7dej1kqfdev" path="res://assets/images/fireball1.png" id="2_kk1mo"]
-[ext_resource type="Script" path="res://src/enemies/sprite.gd" id="3_hpqmp"]
+[ext_resource type="Script" path="res://src/enemies/sprites.gd" id="3_hpqmp"]
 [ext_resource type="Texture2D" uid="uid://bb7h5gyup60mb" path="res://assets/images/fireball2.png" id="4_kc346"]
 [ext_resource type="Texture2D" uid="uid://b0v5i3bb5dvel" path="res://assets/images/fireball3.png" id="5_utvmi"]
 

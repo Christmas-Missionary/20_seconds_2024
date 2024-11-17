@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ban02fkf5lwyv"]
 
 [ext_resource type="Script" path="res://src/enemies/tumbleweed.gd" id="1_myf8d"]
-[ext_resource type="Script" path="res://src/enemies/sprite.gd" id="3_afx88"]
+[ext_resource type="Script" path="res://src/enemies/sprites.gd" id="3_afx88"]
 [ext_resource type="Texture2D" uid="uid://c8rtn4rcviron" path="res://assets/images/tumbleweed1.png" id="3_rglsa"]
 [ext_resource type="Texture2D" uid="uid://iiii5dh8hb63" path="res://assets/images/tumbleweed2.png" id="4_3e6me"]
 [ext_resource type="AudioStream" uid="uid://dukx2nbwhcsxr" path="res://assets/sfx/tumbleweed_landing.wav" id="5_uuw3s"]
