@@ -10,6 +10,7 @@ const _SIZE: int = 3
 signal request_pause
 
 func _ready() -> void:
+	MusicPlayer.set_stream_paused(false)
 	var fort: = _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
 	add_child(fort)
 	fort.position = Vector2(500, 0)
