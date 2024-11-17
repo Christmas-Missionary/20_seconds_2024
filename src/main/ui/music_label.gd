@@ -7,5 +7,6 @@ func _ready() -> void:
 	text = "[center]Music Volume - " + str(GameStats.music_volume)
 
 func _change_text(val: float) -> void:
-	text = "[center]Music Volume - " + str(int(val))
-	GameStats.music_volume = int(val)
+	text = "[center]Music Volume - " + str(val)
+	GameStats.music_volume = val
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(&"Music"), linear_to_db(val))
