@@ -27,7 +27,7 @@ process_mode = 1
 texture_filter = 1
 script = ExtResource("1_nanye")
 metadata/_edit_lock_ = true
-metadata/_edit_vertical_guides_ = [800.0, 900.0, 700.0]
+metadata/_edit_vertical_guides_ = [800.0, 900.0, 700.0, 23.0]
 metadata/_edit_horizontal_guides_ = [525.0, 625.0]
 
 [node name="CloudLayer" type="Node2D" parent="."]
@@ -37,6 +37,7 @@ script = ExtResource("2_2tnbl")
 layer = -1
 
 [node name="Sun" type="Sprite2D" parent="SunLayer"]
+texture_filter = 1
 position = Vector2(53, 84)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_si4jm")
@@ -69,6 +70,7 @@ metadata/_edit_lock_ = true
 
 [node name="Labels" type="HBoxContainer" parent="CanvasLayer/UI"]
 layout_mode = 0
+offset_left = 23.0
 offset_right = 1200.0
 offset_bottom = 49.0
 metadata/_edit_lock_ = true
@@ -110,6 +112,7 @@ offset_top = 80.0
 offset_right = 1200.0
 offset_bottom = 650.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="HoverPlayer" type="AudioStreamPlayer" parent="CanvasLayer/UI/ColorRect"]
 stream = SubResource("AudioStreamRandomizer_lrd1q")
