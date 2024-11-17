@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameStats="*res://src/game_stats.gd"
+MusicPlayer="*res://src/music_player.gd"
 
 [display]
 
