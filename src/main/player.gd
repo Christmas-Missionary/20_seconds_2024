@@ -33,9 +33,6 @@ func _ready() -> void:
 	set_process(false)
 
 func _physics_process(delta: float):
-	if Input.get_action_strength(&"Reset"):
-		die()
-		return
 	var input_axis: float = Input.get_action_strength(&"Right") - Input.get_action_strength(&"Left")
 	velocity = Vector2(move_toward(velocity.x, input_axis * _MAX_SPEED,
 	(_ACCEL if input_axis else _FRICTION) * delta),
