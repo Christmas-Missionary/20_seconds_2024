@@ -32,7 +32,7 @@ func _jump() -> void:
 func _physics_process(delta: float):
 	const _MAX_SPEED: float = 520.0
 	const _ACCEL: float = 1500.0
-	const _FRICTION: float = 1500.0
+	const _FRICTION: float = 2200.0
 	const _GRAVITY: float = 880.0
 	var input_axis: float = Input.get_action_strength(&"Right") - Input.get_action_strength(&"Left")
 	velocity = Vector2(move_toward(velocity.x, input_axis * _MAX_SPEED,
