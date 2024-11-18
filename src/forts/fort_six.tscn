@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=4 uid="uid://bsasbx5t3fsft"]
+
+[ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="1_0t5ux"]
+[ext_resource type="Script" path="res://src/forts/fort_six.gd" id="2_vkiy6"]
+[ext_resource type="PackedScene" uid="uid://ban02fkf5lwyv" path="res://src/enemies/tumbleweed.tscn" id="4_8refm"]
+[ext_resource type="PackedScene" uid="uid://c16hdwi5ggrpx" path="res://src/enemies/cactus.tscn" id="4_rc63c"]
+[ext_resource type="PackedScene" uid="uid://bmr4gtup2a1ri" path="res://src/enemies/fireball_thrower.tscn" id="5_3ud71"]
+
+[node name="FortSix" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAABAP//AQAAAAAAAAACAP//AQAAAAAAAAADAP//AQAAAAAAAAAEAP//AQAAAAAAAAAFAP//AQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQAAAAAAAAAIAP//AQAAAAAAAAAJAP//AQAAAAAAAAAKAP//AQAAAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP//AQAAAAAAAAAOAP//AQAAAAAAAAA=")
+tile_set = ExtResource("1_0t5ux")
+script = ExtResource("2_vkiy6")
+
+[node name="Cactus" parent="." instance=ExtResource("4_rc63c")]
+position = Vector2(10, -46)
+
+[node name="Cactus2" parent="." instance=ExtResource("4_rc63c")]
+position = Vector2(290, -46)
+
+[node name="Tumbleweed" parent="." instance=ExtResource("4_8refm")]
+position = Vector2(230, -32)
+
+[node name="Tumbleweed2" parent="." instance=ExtResource("4_8refm")]
+position = Vector2(190, -32)
+
+[node name="Tumbleweed3" parent="." instance=ExtResource("4_8refm")]
+position = Vector2(150, -32)
+
+[node name="FireballThrower" parent="." instance=ExtResource("5_3ud71")]
+position = Vector2(10, -81)
+
+[node name="FireballThrower2" parent="." instance=ExtResource("5_3ud71")]
+position = Vector2(290, -81)

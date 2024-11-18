@@ -6,14 +6,15 @@ const _ALL_FORTS: Array[PackedScene] = [
 	preload("res://src/forts/fort_three.tscn"),
 	preload("res://src/forts/fort_four.tscn"),
 	preload("res://src/forts/fort_five.tscn"),
+	preload("res://src/forts/fort_six.tscn"),
 ]
-const _SIZE: int = 5
+const _SIZE: int = 6
 
 signal request_pause
 
 func _ready() -> void:
 	MusicPlayer.set_stream_paused(false)
-	var fort: = _ALL_FORTS[4].instantiate() as Node2D
+	var fort: = _ALL_FORTS[5].instantiate() as Node2D
 	add_child(fort)
 	fort.position = Vector2(500, 0)
 	
@@ -31,7 +32,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 func _generate_next_fort() -> void:
 	var start: int = Time.get_ticks_usec()
 	
-	var fort: = _ALL_FORTS[4].instantiate() as Node2D
+	var fort: = _ALL_FORTS[5].instantiate() as Node2D
 	add_child(fort)
 	fort.position = _notifier.position + Vector2(-150, 150)
 	_notifier.position.x += 500
