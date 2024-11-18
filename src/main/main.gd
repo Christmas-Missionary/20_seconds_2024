@@ -22,6 +22,7 @@ func _ready() -> void:
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"Pause"):
 		request_pause.emit()
+		MusicPlayer.set_stream_paused(false)
 		get_tree().set_pause(true)
 
 @onready var _notifier: = $Notifier as VisibleOnScreenNotifier2D
