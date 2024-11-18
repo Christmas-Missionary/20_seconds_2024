@@ -238,7 +238,7 @@ text = "CLOSE"
 [connection signal="request_pause" from="." to="CanvasLayer/UI/Labels/TimeLeft/GameTimer" method="set_paused" binds= [true]]
 [connection signal="screen_entered" from="Notifier" to="." method="_generate_next_fort"]
 [connection signal="block_distance" from="Player" to="CanvasLayer/UI/Labels/Score" method="set_score"]
-[connection signal="timeout" from="CanvasLayer/UI/Labels/TimeLeft/GameTimer" to="Player" method="die"]
+[connection signal="timeout" from="CanvasLayer/UI/Labels/TimeLeft/GameTimer" to="Player" method="die" binds= [4]]
 [connection signal="mouse_entered" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/ColorRect/HoverPlayer" method="play"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/ColorRect" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/ColorRect/Container/Buttons/Play" method="_check_game_time"]

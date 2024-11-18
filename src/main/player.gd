@@ -3,6 +3,8 @@ class_name Player
 
 enum _JUMP_STATES {NONE, QUEUE, READY}
 
+enum DEATH_CAUSE {TUMBLEWEED, CACTUS, FIREBALL, FELL_OFF, TIMES_UP}
+
 var _num_of_jumps: int = 0
 
 var _jump_status: _JUMP_STATES = _JUMP_STATES.NONE:
@@ -56,7 +58,7 @@ func _physics_process(delta: float):
 	
 	block_distance.emit(floori(position.x / 20))
 	if position.y > 0:
-		die()
+		die(DEATH_CAUSE.FELL_OFF)
 
 var time_since_jump_press: float = 0.0
 func _process(delta: float) -> void:
@@ -67,6 +69,31 @@ func _process(delta: float) -> void:
 	elif time_since_jump_press >= _QUEUE_THESHOLD:
 		_jump_status = _JUMP_STATES.NONE
 
-func die() -> void:
+var is_dead: bool = false
+
+func die(cause: DEATH_CAUSE) -> void:
+	if is_dead:
+		return
+	is_dead = true
+	if cause == DEATH_CAUSE.TIMES_UP:
+		get_tree().reload_current_scene.call_deferred()
+		return
+	set_physics_process(false)
+	const _DEATH_AUDIOS: Array[AudioStreamWAV] = [
+		preload("res://assets/sfx/tumbleweed_death.wav"),
+		preload("res://assets/sfx/cactus_death.wav"),
+		preload("res://assets/sfx/fire_death.wav"),
+		preload("res://assets/sfx/falling_death.wav"),
+	]
+	var audio_rand: = AudioStreamRandomizer.new()
+	audio_rand.add_stream(0, _DEATH_AUDIOS[cause])
+	audio_rand.random_pitch = 1.3
+	($DeathPlayer as AudioStreamPlayer2D).stream = audio_rand
+	($DeathPlayer as AudioStreamPlayer2D).play()
+	if cause != DEATH_CAUSE.FELL_OFF:
+		hide()
+	var timer: = $Timer as Timer
+	timer.start()
+	await timer.timeout
 	GameStats.last_score = floori(position.x / 20)
 	get_tree().reload_current_scene.call_deferred()

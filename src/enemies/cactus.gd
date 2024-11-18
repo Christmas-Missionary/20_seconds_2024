@@ -2,4 +2,4 @@ extends RigidBody2D
 
 func _check_body(body: Node2D) -> void:
 	if body is Player:
-		(body as Player).die()
+		(body as Player).die(Player.DEATH_CAUSE.CACTUS)
