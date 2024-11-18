@@ -23,3 +23,6 @@ func _add(enemy: ENEMIES) -> Node2D:
 	var node: = ENEMY_SCENES[enemy].instantiate() as Node2D
 	add_child(node)
 	return node
+
+func _set_block(pos: Vector2i, set_to: bool) -> void:
+	set_cell(pos, 1 if set_to else -1, Vector2i.ZERO)

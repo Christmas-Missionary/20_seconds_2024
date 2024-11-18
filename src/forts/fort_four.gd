@@ -9,9 +9,9 @@ func _ready() -> void:
 	if randi() % 2:
 		_add(ENEMIES.CACTUS).position = bouncing_pos + Vector2(0, -70)
 	if randi() % 5:
-		set_cell(Vector2i(4, -10), -1, Vector2i.ZERO)
+		_set_block(Vector2i(4, -10), false)
 	if !(randi() % 8):
 		_add(ENEMIES.BOUNCE_PAD).position = Vector2(110, -23)
 	if randi() % 2:
-		set_cell(Vector2i(8, -6), -1, Vector2i.ZERO)
+		_set_block(Vector2i(8, -6), false)
 		_add(ENEMIES.FIREBALL_THROWER).position = Vector2(170, -110)
