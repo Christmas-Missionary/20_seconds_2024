@@ -68,4 +68,5 @@ func _process(delta: float) -> void:
 		_jump_status = _JUMP_STATES.NONE
 
 func die() -> void:
+	GameStats.last_score = floori(position.x / 20)
 	get_tree().reload_current_scene.call_deferred()
