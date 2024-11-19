@@ -5,7 +5,20 @@ var _x_speed: float = 0.0
 var _velocity: Vector2 = Vector2.ZERO
 var _rot_speed: float = 0.0
 
+func as_sibling(to: Node) -> PlayerDeath:
+	to.get_parent().add_child(self)
+	return self
+
 func spawn(trans: Transform2D, code: Player.DEATH_CAUSE) -> void:
+	const _DEATH_AUDIOS: Array[AudioStreamWAV] = [
+		preload("res://assets/sfx/tumbleweed_death.wav"),
+		preload("res://assets/sfx/cactus_death.wav"),
+		preload("res://assets/sfx/fire_death.wav"),
+		preload("res://assets/sfx/falling_death.wav"),
+	]
+	var _audio: = $DeathPlayer as AudioStreamPlayer2D
+	(_audio.stream as AudioStreamRandomizer).add_stream(0, _DEATH_AUDIOS[mini(3, code)])
+	_audio.play()
 	transform = trans
 	_rot_speed = TAU * randf_range(-0.1, 0.1)
 	_x_speed = randf_range(-8.0, 8.0)
