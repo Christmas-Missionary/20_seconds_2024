@@ -12,8 +12,11 @@ const _SIZE: int = 6
 
 signal request_pause
 
+var is_reloading: bool = false
+
+@onready var _notifier: = $Notifier as VisibleOnScreenNotifier2D
+
 func _ready() -> void:
-	
 	MusicPlayer.set_stream_paused(false)
 	var fort: = _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
 	add_child(fort)
@@ -29,11 +32,14 @@ func _ready() -> void:
 		get_tree().set_pause(true)
 
 func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_action_pressed(&"Pause"):
+	if event.is_action_pressed(&"Restart"):
+		GameStats.last_score = floori(($Player as Node2D).position.x / 20)
+		get_tree().reload_current_scene.call_deferred()
+		is_reloading = true
+	elif event.is_action_pressed(&"Pause") and !is_reloading:
 		request_pause.emit()
 		get_tree().set_pause(true)
 
-@onready var _notifier: = $Notifier as VisibleOnScreenNotifier2D
 func _generate_next_fort() -> void:
 	var start: int = Time.get_ticks_usec()
 	
