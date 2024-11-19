@@ -95,7 +95,7 @@ func die(cause: DEATH_CAUSE) -> void:
 		hide()
 	var sprite: = _DEATH_SPRITE.instantiate() as PlayerDeath
 	add_sibling(sprite)
-	sprite.spawn(transform)
+	sprite.spawn(transform, cause)
 	var timer: = $Timer as Timer
 	timer.start()
 	await timer.timeout
