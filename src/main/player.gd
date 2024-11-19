@@ -75,9 +75,6 @@ func die(cause: DEATH_CAUSE) -> void:
 	if is_dead:
 		return
 	is_dead = true
-	if cause == DEATH_CAUSE.TIMES_UP:
-		get_tree().reload_current_scene.call_deferred()
-		return
 	set_physics_process(false)
 	const _DEATH_SPRITE: PackedScene = preload("res://src/main/player_death.tscn")
 	const _DEATH_AUDIOS: Array[AudioStreamWAV] = [
@@ -87,7 +84,7 @@ func die(cause: DEATH_CAUSE) -> void:
 		preload("res://assets/sfx/falling_death.wav"),
 	]
 	var audio_rand: = AudioStreamRandomizer.new()
-	audio_rand.add_stream(0, _DEATH_AUDIOS[cause])
+	audio_rand.add_stream(0, _DEATH_AUDIOS[mini(3, cause)])
 	audio_rand.random_pitch = 1.3
 	($DeathPlayer as AudioStreamPlayer2D).stream = audio_rand
 	($DeathPlayer as AudioStreamPlayer2D).play()
@@ -101,3 +98,8 @@ func die(cause: DEATH_CAUSE) -> void:
 	await timer.timeout
 	GameStats.last_score = floori(position.x / 20)
 	get_tree().reload_current_scene.call_deferred()
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"Restart"):
+		GameStats.last_score = floori(position.x / 20)
+		get_tree().reload_current_scene.call_deferred()
