@@ -79,6 +79,7 @@ func die(cause: DEATH_CAUSE) -> void:
 		get_tree().reload_current_scene.call_deferred()
 		return
 	set_physics_process(false)
+	const _DEATH_SPRITE: PackedScene = preload("res://src/main/player_death.tscn")
 	const _DEATH_AUDIOS: Array[AudioStreamWAV] = [
 		preload("res://assets/sfx/tumbleweed_death.wav"),
 		preload("res://assets/sfx/cactus_death.wav"),
@@ -92,6 +93,9 @@ func die(cause: DEATH_CAUSE) -> void:
 	($DeathPlayer as AudioStreamPlayer2D).play()
 	if cause != DEATH_CAUSE.FELL_OFF:
 		hide()
+	var sprite: = _DEATH_SPRITE.instantiate() as PlayerDeath
+	add_sibling(sprite)
+	sprite.spawn(transform)
 	var timer: = $Timer as Timer
 	timer.start()
 	await timer.timeout
