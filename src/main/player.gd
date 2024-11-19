@@ -93,11 +93,15 @@ func die(cause: DEATH_CAUSE) -> void:
 	var sprite: = _DEATH_SPRITE.instantiate() as PlayerDeath
 	add_sibling(sprite)
 	sprite.spawn(transform, cause)
-	var timer: = $Timer as Timer
-	timer.start()
-	await timer.timeout
-	GameStats.last_score = floori(position.x / 20)
-	get_tree().reload_current_scene.call_deferred()
+	if GameStats.is_respawning_automatically:
+		var timer: = $Timer as Timer
+		timer.start()
+		await timer.timeout
+		GameStats.last_score = floori(position.x / 20)
+		get_tree().reload_current_scene.call_deferred()
+	else:
+		MusicPlayer.set_stream_paused(true)
+		($/root/Main/CanvasLayer/UI/Labels/TimeLeft/GameTimer as Timer).set_paused(true)
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"Restart"):

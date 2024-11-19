@@ -28,9 +28,9 @@ stream_0/stream = ExtResource("11_v3mo6")
 process_mode = 1
 texture_filter = 1
 script = ExtResource("1_nanye")
-metadata/_edit_lock_ = true
 metadata/_edit_vertical_guides_ = [800.0, 900.0, 700.0, 23.0]
 metadata/_edit_horizontal_guides_ = [525.0, 625.0]
+metadata/_edit_lock_ = true
 
 [node name="CloudLayer" type="Node2D" parent="."]
 script = ExtResource("2_2tnbl")
@@ -86,6 +86,7 @@ text = "TIME: 20.0"
 script = ExtResource("4_61toc")
 
 [node name="GameTimer" type="Timer" parent="CanvasLayer/UI/Labels/TimeLeft"]
+process_mode = 1
 process_callback = 0
 wait_time = 20.0
 one_shot = true
@@ -121,6 +122,7 @@ text = "HIGH SCORE: 0"
 script = ExtResource("6_uqvrq")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI"]
+visible = false
 layout_mode = 0
 offset_left = 380.0
 offset_top = 80.0
@@ -235,14 +237,12 @@ theme_override_font_sizes/font_size = 64
 text = "CLOSE"
 
 [connection signal="request_pause" from="." to="CanvasLayer/UI/ColorRect" method="show"]
-[connection signal="request_pause" from="." to="CanvasLayer/UI/Labels/TimeLeft/GameTimer" method="set_paused" binds= [true]]
 [connection signal="screen_entered" from="Notifier" to="." method="_generate_next_fort"]
 [connection signal="block_distance" from="Player" to="CanvasLayer/UI/Labels/Score" method="set_score"]
 [connection signal="timeout" from="CanvasLayer/UI/Labels/TimeLeft/GameTimer" to="Player" method="die" binds= [4]]
 [connection signal="mouse_entered" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/ColorRect/HoverPlayer" method="play"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/ColorRect" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/ColorRect/Container/Buttons/Play" method="_check_game_time"]
-[connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Play" to="CanvasLayer/UI/Labels/TimeLeft/GameTimer" method="set_paused" binds= [false]]
 [connection signal="mouse_entered" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/HoverPlayer" method="play"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/Container" method="hide"]
 [connection signal="pressed" from="CanvasLayer/UI/ColorRect/Container/Buttons/Legal" to="CanvasLayer/UI/ColorRect/Title" method="hide"]

@@ -10,6 +10,8 @@ var is_respawning_automatically: bool = false
 var high_score: int = 0
 var last_score: int = 0
 
+var is_first_time: bool = true
+
 func _init() -> void:
 	set_process_mode(Node.PROCESS_MODE_ALWAYS)
 	if ResourceLoader.exists(_SAVE_PATH) and ResourceLoader.load(_SAVE_PATH) != null:
