@@ -77,7 +77,7 @@ func die(cause: DEATH_CAUSE) -> void:
 		return
 	is_dead = true
 	set_physics_process(false)
-	const _DEATH_SPRITE: PackedScene = preload("res://src/main/player_death.tscn")
+	const _DEATH_SPRITE: PackedScene = preload("res://src/main/player/player_death.tscn")
 	const _DEATH_AUDIOS: Array[AudioStreamWAV] = [
 		preload("res://assets/sfx/tumbleweed_death.wav"),
 		preload("res://assets/sfx/cactus_death.wav"),
