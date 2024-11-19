@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://oilqnix2sn8h"]
+[gd_scene load_steps=6 format=3 uid="uid://oilqnix2sn8h"]
 
 [ext_resource type="Script" path="res://src/main/player/player.gd" id="1_cuihl"]
 [ext_resource type="Texture2D" uid="uid://dwn4srm256xxy" path="res://assets/images/player.png" id="2_11bah"]
@@ -8,9 +8,6 @@
 random_pitch = 1.2
 streams_count = 1
 stream_0/stream = ExtResource("3_ifqqo")
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2gmu1"]
-streams_count = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0re3"]
 size = Vector2(19, 19)
@@ -23,11 +20,6 @@ metadata/_edit_lock_ = true
 
 [node name="JumpPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_opjdo")
-bus = &"SFX"
-
-[node name="DeathPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_2gmu1")
-volume_db = 5.0
 bus = &"SFX"
 
 [node name="Collision" type="CollisionShape2D" parent="."]

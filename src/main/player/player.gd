@@ -71,28 +71,16 @@ func _process(delta: float) -> void:
 
 var is_dead: bool = false
 
-# This must be refactored at some point
 func die(cause: DEATH_CAUSE) -> void:
 	if is_dead:
 		return
 	is_dead = true
 	set_physics_process(false)
-	const _DEATH_SPRITE: PackedScene = preload("res://src/main/player/player_death.tscn")
-	const _DEATH_AUDIOS: Array[AudioStreamWAV] = [
-		preload("res://assets/sfx/tumbleweed_death.wav"),
-		preload("res://assets/sfx/cactus_death.wav"),
-		preload("res://assets/sfx/fire_death.wav"),
-		preload("res://assets/sfx/falling_death.wav"),
-	]
-	var audio_rand: = AudioStreamRandomizer.new()
-	audio_rand.add_stream(0, _DEATH_AUDIOS[mini(3, cause)])
-	audio_rand.random_pitch = 1.3
-	($DeathPlayer as AudioStreamPlayer2D).stream = audio_rand
-	($DeathPlayer as AudioStreamPlayer2D).play()
 	hide()
-	var sprite: = _DEATH_SPRITE.instantiate() as PlayerDeath
-	add_sibling(sprite)
-	sprite.spawn(transform, cause)
+	((preload("res://src/main/player/player_death.tscn")
+	.instantiate() as PlayerDeath)
+	.as_sibling(self)
+	.spawn(transform, cause))
 	if GameStats.is_respawning_automatically:
 		var timer: = $Timer as Timer
 		timer.start()
@@ -101,4 +89,4 @@ func die(cause: DEATH_CAUSE) -> void:
 		get_tree().reload_current_scene.call_deferred()
 	else:
 		MusicPlayer.set_stream_paused(true)
-		($/root/Main/CanvasLayer/UI/Labels/TimeLeft/GameTimer as Timer).set_paused(true)
+		($"../CanvasLayer/UI/Labels/TimeLeft/GameTimer" as Timer).set_paused(true)

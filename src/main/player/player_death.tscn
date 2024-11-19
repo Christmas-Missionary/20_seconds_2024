@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6d348cw1fjcu"]
+[gd_scene load_steps=4 format=3 uid="uid://c6d348cw1fjcu"]
 
 [ext_resource type="Texture2D" uid="uid://dwn4srm256xxy" path="res://assets/images/player.png" id="1_4qfeh"]
 [ext_resource type="Script" path="res://src/main/player/player_death.gd" id="2_jand8"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gepne"]
+random_pitch = 1.3
+streams_count = 1
 
 [node name="PlayerDeath" type="Sprite2D"]
 texture_filter = 1
@@ -12,5 +16,10 @@ script = ExtResource("2_jand8")
 process_callback = 0
 wait_time = 5.0
 autostart = true
+
+[node name="DeathPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_gepne")
+volume_db = 5.0
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="queue_free"]
