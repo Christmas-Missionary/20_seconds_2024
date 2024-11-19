@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c6d348cw1fjcu"]
 
 [ext_resource type="Texture2D" uid="uid://dwn4srm256xxy" path="res://assets/images/player.png" id="1_4qfeh"]
-[ext_resource type="Script" path="res://src/main/player_death.gd" id="2_jand8"]
+[ext_resource type="Script" path="res://src/main/player/player_death.gd" id="2_jand8"]
 
 [node name="PlayerDeath" type="Sprite2D"]
 texture_filter = 1
