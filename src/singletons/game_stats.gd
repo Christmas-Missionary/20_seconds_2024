@@ -9,8 +9,18 @@ var sfx_volume: float = 0.5
 var is_respawning_automatically: bool = false
 var high_score: int = 0
 var last_score: int = 0
-
 var is_first_time: bool = true
+var background_value: int = 100
+var is_bv_going_up: bool = false
+
+func get_bv_and_toggle() -> float:
+	var res: int = background_value
+	background_value = background_value + (10 if is_bv_going_up else -10)
+	if background_value == 0:
+		is_bv_going_up = true
+	elif background_value == 100:
+		is_bv_going_up = false
+	return res / 100.0
 
 func _init() -> void:
 	set_process_mode(Node.PROCESS_MODE_ALWAYS)

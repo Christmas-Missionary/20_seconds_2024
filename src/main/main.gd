@@ -17,6 +17,7 @@ var is_reloading: bool = false
 @onready var _notifier: = $Notifier as VisibleOnScreenNotifier2D
 
 func _ready() -> void:
+	RenderingServer.set_default_clear_color(Color.from_hsv(0.529248, 1.0, GameStats.get_bv_and_toggle()))
 	MusicPlayer.set_stream_paused(false)
 	var fort: = _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
 	add_child(fort)
