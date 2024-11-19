@@ -57,7 +57,7 @@ func _physics_process(delta: float):
 	position.x = maxi(int(position.x), _camera.limit_left)
 	
 	block_distance.emit(floori(position.x / 20))
-	if position.y > 0:
+	if position.y > 50:
 		die(DEATH_CAUSE.FELL_OFF)
 
 var time_since_jump_press: float = 0.0
@@ -89,8 +89,7 @@ func die(cause: DEATH_CAUSE) -> void:
 	audio_rand.random_pitch = 1.3
 	($DeathPlayer as AudioStreamPlayer2D).stream = audio_rand
 	($DeathPlayer as AudioStreamPlayer2D).play()
-	if cause != DEATH_CAUSE.FELL_OFF:
-		hide()
+	hide()
 	var sprite: = _DEATH_SPRITE.instantiate() as PlayerDeath
 	add_sibling(sprite)
 	sprite.spawn(transform, cause)
