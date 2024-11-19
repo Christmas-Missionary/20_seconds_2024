@@ -7,3 +7,10 @@
 texture_filter = 1
 texture = ExtResource("1_4qfeh")
 script = ExtResource("2_jand8")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="queue_free"]
