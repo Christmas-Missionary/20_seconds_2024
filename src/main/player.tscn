@@ -35,6 +35,7 @@ shape = SubResource("RectangleShape2D_f0re3")
 metadata/_edit_lock_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(0.211765, 0.305882, 0.921569, 1)
 texture = ExtResource("2_11bah")
 metadata/_edit_lock_ = true
 
