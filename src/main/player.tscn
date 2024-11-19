@@ -23,7 +23,6 @@ metadata/_edit_lock_ = true
 
 [node name="JumpPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_opjdo")
-volume_db = 5.0
 bus = &"SFX"
 
 [node name="DeathPlayer" type="AudioStreamPlayer2D" parent="."]

@@ -18,6 +18,7 @@ script = ExtResource("1_406bl")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_awn3k")
+volume_db = -5.0
 autoplay = true
 bus = &"SFX"
 

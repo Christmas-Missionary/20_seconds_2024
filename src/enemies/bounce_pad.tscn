@@ -26,6 +26,7 @@ script = ExtResource("1_uamck")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_hij68")
+volume_db = -7.0
 bus = &"SFX"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
