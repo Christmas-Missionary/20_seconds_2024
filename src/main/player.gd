@@ -71,6 +71,7 @@ func _process(delta: float) -> void:
 
 var is_dead: bool = false
 
+# This must be refactored at some point
 func die(cause: DEATH_CAUSE) -> void:
 	if is_dead:
 		return
