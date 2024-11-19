@@ -14,7 +14,7 @@ signal request_pause
 
 func _ready() -> void:
 	MusicPlayer.set_stream_paused(false)
-	var fort: = _ALL_FORTS[5].instantiate() as Node2D
+	var fort: = _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
 	add_child(fort)
 	fort.position = Vector2(500, 0)
 	
@@ -32,7 +32,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 func _generate_next_fort() -> void:
 	var start: int = Time.get_ticks_usec()
 	
-	var fort: = _ALL_FORTS[5].instantiate() as Node2D
+	var fort: = _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
 	add_child(fort)
 	fort.position = _notifier.position + Vector2(-150, 150)
 	_notifier.position.x += 500
