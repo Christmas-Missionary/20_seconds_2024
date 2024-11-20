@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://j5cjluqwqb6u"]
+
+[ext_resource type="PackedScene" uid="uid://dvpnmfb71jgxd" path="res://src/enemies/bounce_pad.tscn" id="1_1ms1g"]
+[ext_resource type="PackedScene" uid="uid://c16hdwi5ggrpx" path="res://src/enemies/cactus.tscn" id="2_smtdc"]
+[ext_resource type="PackedScene" uid="uid://bmr4gtup2a1ri" path="res://src/enemies/fireball_thrower.tscn" id="3_pbaku"]
+
+[node name="DeathTrap" type="Node2D"]
+
+[node name="BouncePad" parent="." instance=ExtResource("1_1ms1g")]
+position = Vector2(0, -23)
+metadata/_edit_lock_ = true
+
+[node name="Cactus" parent="." instance=ExtResource("2_smtdc")]
+position = Vector2(0, -90)
+metadata/_edit_lock_ = true
+
+[node name="BouncePad2" parent="." instance=ExtResource("1_1ms1g")]
+position = Vector2(0, -160)
+metadata/_edit_lock_ = true
+
+[node name="Cactus2" parent="." instance=ExtResource("2_smtdc")]
+position = Vector2(0, -220)
+metadata/_edit_lock_ = true
+
+[node name="BouncePad3" parent="." instance=ExtResource("1_1ms1g")]
+position = Vector2(0, -280)
+metadata/_edit_lock_ = true
+
+[node name="FireballThrower" parent="." instance=ExtResource("3_pbaku")]
+position = Vector2(0, -323)
