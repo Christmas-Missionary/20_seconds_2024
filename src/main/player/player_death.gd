@@ -17,7 +17,7 @@ func spawn(trans: Transform2D, code: Player.DEATH_CAUSE) -> void:
 		preload("res://assets/sfx/falling_death.wav"),
 	]
 	var _audio: = $DeathPlayer as AudioStreamPlayer2D
-	(_audio.stream as AudioStreamRandomizer).add_stream(0, _DEATH_AUDIOS[mini(3, code)])
+	(_audio.stream as AudioStreamRandomizer).set_stream(0, _DEATH_AUDIOS[mini(3, code)])
 	_audio.play()
 	transform = trans
 	_rot_speed = TAU * randf_range(-0.1, 0.1)
