@@ -8,8 +8,9 @@ const _ALL_FORTS: Array[PackedScene] = [
 	preload("res://src/forts/fort_five.tscn"),
 	preload("res://src/forts/fort_six.tscn"),
 	preload("res://src/forts/fort_seven.tscn"),
+	preload("res://src/forts/fort_eight.tscn"),
 ]
-const _SIZE: int = 7
+const _SIZE: int = 8
 
 signal request_pause
 
