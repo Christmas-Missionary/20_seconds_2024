@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=35 format=3 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player/player.tscn" id="1_tolmm"]
@@ -8,7 +8,9 @@
 [ext_resource type="Script" path="res://src/main/ui/time_left_label.gd" id="4_61toc"]
 [ext_resource type="Texture2D" uid="uid://r5ehy6c4gt4k" path="res://assets/images/sun.png" id="4_si4jm"]
 [ext_resource type="Script" path="res://src/main/ui/score_label.gd" id="5_ogntn"]
+[ext_resource type="Texture2D" uid="uid://b0pkys4d5hv2k" path="res://assets/images/slider_normal.png" id="6_7c5w0"]
 [ext_resource type="Script" path="res://src/main/ui/high_score_label.gd" id="6_uqvrq"]
+[ext_resource type="Texture2D" uid="uid://ce3im5jtvqjb0" path="res://assets/images/slider_highlighted.png" id="7_eocjw"]
 [ext_resource type="Script" path="res://src/main/ui/play_button.gd" id="8_0emv5"]
 [ext_resource type="AudioStream" uid="uid://bkskekgn1hkic" path="res://assets/sfx/low_on_time.wav" id="8_7amqm"]
 [ext_resource type="Script" path="res://src/main/game_timer.gd" id="8_j7gi2"]
@@ -71,6 +73,8 @@ CheckButton/styles/hover = SubResource("StyleBoxFlat_bpcls")
 CheckButton/styles/hover_pressed = SubResource("StyleBoxFlat_2usja")
 CheckButton/styles/normal = SubResource("StyleBoxFlat_snkjk")
 CheckButton/styles/pressed = SubResource("StyleBoxFlat_fxqmo")
+HSlider/icons/grabber = ExtResource("6_7c5w0")
+HSlider/icons/grabber_highlight = ExtResource("7_eocjw")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_jmnti")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_0s0qy")
 RichTextLabel/colors/default_color = Color(0, 0.75, 0.9, 1)
@@ -181,6 +185,7 @@ text = "HIGH SCORE: 0"
 script = ExtResource("6_uqvrq")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI"]
+visible = false
 layout_mode = 0
 offset_left = 380.0
 offset_top = 80.0
