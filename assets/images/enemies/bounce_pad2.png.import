@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0v5i3bb5dvel"
-path="res://.godot/imported/fireball3.png-c427c21085375e07cd7f5eee3817e55c.ctex"
+uid="uid://dxe330fmoqapc"
+path="res://.godot/imported/bounce_pad2.png-82ea06c7c3c87a01ae4e4f163b3d84a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/fireball3.png"
-dest_files=["res://.godot/imported/fireball3.png-c427c21085375e07cd7f5eee3817e55c.ctex"]
+source_file="res://assets/images/enemies/bounce_pad2.png"
+dest_files=["res://.godot/imported/bounce_pad2.png-82ea06c7c3c87a01ae4e4f163b3d84a6.ctex"]
 
 [params]
 

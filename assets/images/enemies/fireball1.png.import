@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r5ehy6c4gt4k"
-path="res://.godot/imported/sun.png-e1cb8d441b558b94ff8b0671db0eba85.ctex"
+uid="uid://df7dej1kqfdev"
+path="res://.godot/imported/fireball1.png-9a07cca85bb29f311967ebe6d38585f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sun.png"
-dest_files=["res://.godot/imported/sun.png-e1cb8d441b558b94ff8b0671db0eba85.ctex"]
+source_file="res://assets/images/enemies/fireball1.png"
+dest_files=["res://.godot/imported/fireball1.png-9a07cca85bb29f311967ebe6d38585f5.ctex"]
 
 [params]
 

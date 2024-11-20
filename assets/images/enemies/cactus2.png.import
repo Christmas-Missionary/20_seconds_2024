@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0pkys4d5hv2k"
-path="res://.godot/imported/slider_normal.png-069dc5271bdd04bd739e71cf3ef5c329.ctex"
+uid="uid://nnjqsg3hud41"
+path="res://.godot/imported/cactus2.png-7e2c0dacd9588b36249c47bb7bf94751.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/slider_normal.png"
-dest_files=["res://.godot/imported/slider_normal.png-069dc5271bdd04bd739e71cf3ef5c329.ctex"]
+source_file="res://assets/images/enemies/cactus2.png"
+dest_files=["res://.godot/imported/cactus2.png-7e2c0dacd9588b36249c47bb7bf94751.ctex"]
 
 [params]
 

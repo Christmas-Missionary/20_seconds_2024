@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ry2qfpfm5skp"]
 
 [ext_resource type="Script" path="res://src/enemies/dust_devil.gd" id="1_406bl"]
-[ext_resource type="Texture2D" uid="uid://cmu3cmii22qod" path="res://assets/images/cloud2.png" id="2_mq41l"]
+[ext_resource type="Texture2D" uid="uid://cmu3cmii22qod" path="res://assets/images/background/cloud2.png" id="2_mq41l"]
 [ext_resource type="AudioStream" uid="uid://hcknlxychdcx" path="res://assets/sfx/dust_devil.wav" id="3_umoxp"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_awn3k"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8rtn4rcviron"
-path="res://.godot/imported/tumbleweed1.png-03ed6035a6c000ada5af628aea5bfd16.ctex"
+uid="uid://b0pkys4d5hv2k"
+path="res://.godot/imported/slider_normal.png-8e4306353c65556d8c5db219efb85331.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/tumbleweed1.png"
-dest_files=["res://.godot/imported/tumbleweed1.png-03ed6035a6c000ada5af628aea5bfd16.ctex"]
+source_file="res://assets/images/ui/slider_normal.png"
+dest_files=["res://.godot/imported/slider_normal.png-8e4306353c65556d8c5db219efb85331.ctex"]
 
 [params]
 

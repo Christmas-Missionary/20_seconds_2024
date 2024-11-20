@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmu3cmii22qod"
-path="res://.godot/imported/cloud2.png-002332cdff3072dc4c6575df699259a8.ctex"
+uid="uid://iiii5dh8hb63"
+path="res://.godot/imported/tumbleweed2.png-77976941c019880952d3356829be5191.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cloud2.png"
-dest_files=["res://.godot/imported/cloud2.png-002332cdff3072dc4c6575df699259a8.ctex"]
+source_file="res://assets/images/enemies/tumbleweed2.png"
+dest_files=["res://.godot/imported/tumbleweed2.png-77976941c019880952d3356829be5191.ctex"]
 
 [params]
 
