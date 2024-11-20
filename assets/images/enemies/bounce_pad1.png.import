@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duqhqx5vbe3fw"
-path="res://.godot/imported/bounce_pad1.png-156e30bd9a66d0f437fc6c7b91de8259.ctex"
+path="res://.godot/imported/bounce_pad1.png-f043c976c3640cc8aa66bd43fe25e10c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/bounce_pad1.png"
-dest_files=["res://.godot/imported/bounce_pad1.png-156e30bd9a66d0f437fc6c7b91de8259.ctex"]
+source_file="res://assets/images/enemies/bounce_pad1.png"
+dest_files=["res://.godot/imported/bounce_pad1.png-f043c976c3640cc8aa66bd43fe25e10c.ctex"]
 
 [params]
 

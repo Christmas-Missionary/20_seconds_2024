@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5anj4u1ar6xi"
-path="res://.godot/imported/cactus1.png-69c355b56166e697606abab4a4cc020d.ctex"
+path="res://.godot/imported/cactus1.png-1d1b426ab6d55e49dbd4179bcc49d492.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cactus1.png"
-dest_files=["res://.godot/imported/cactus1.png-69c355b56166e697606abab4a4cc020d.ctex"]
+source_file="res://assets/images/enemies/cactus1.png"
+dest_files=["res://.godot/imported/cactus1.png-1d1b426ab6d55e49dbd4179bcc49d492.ctex"]
 
 [params]
 

@@ -7,8 +7,8 @@ extends RigidBody2D
 
 func _emit_fireball() -> void:
 	const _FIREBALL: PackedScene = preload("res://src/enemies/fireball.tscn")
-	const _FIRST_SPRITE: CompressedTexture2D = preload("res://assets/images/fire_thrower1.png")
-	const _OTHER_SPRITE: CompressedTexture2D = preload("res://assets/images/fire_thrower2.png")
+	const _FIRST_SPRITE: CompressedTexture2D = preload("res://assets/images/enemies/fire_thrower1.png")
+	const _OTHER_SPRITE: CompressedTexture2D = preload("res://assets/images/enemies/fire_thrower2.png")
 	_sprite.texture = _OTHER_SPRITE
 	_fire_timer.start(0.5)
 	await _fire_timer.timeout

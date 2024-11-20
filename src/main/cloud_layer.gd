@@ -8,8 +8,8 @@ func _ready() -> void:
 		add_child(sprite)
 		var val: float = randf()
 		sprite.texture = (
-			preload("res://assets/images/cloud1.png") if val < 0.45 else 
-			preload("res://assets/images/cloud2.png") if val < 0.98 else 
-			preload("res://assets/images/cloud3.png"))
+			preload("res://assets/images/background/cloud1.png") if val < 0.45 else 
+			preload("res://assets/images/background/cloud2.png") if val < 0.98 else 
+			preload("res://assets/images/background/cloud3.png"))
 		sprite.position = Vector2(x_pos, randf_range(-240, -280))
 		sprite.rotation = randf_range(0, TAU)

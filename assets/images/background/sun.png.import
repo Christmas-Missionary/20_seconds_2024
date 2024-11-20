@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxe330fmoqapc"
-path="res://.godot/imported/bounce_pad2.png-b91b05e19425334603c8f7375bde7dc1.ctex"
+uid="uid://r5ehy6c4gt4k"
+path="res://.godot/imported/sun.png-a0c2489c61a91217650c816eeb500297.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/bounce_pad2.png"
-dest_files=["res://.godot/imported/bounce_pad2.png-b91b05e19425334603c8f7375bde7dc1.ctex"]
+source_file="res://assets/images/background/sun.png"
+dest_files=["res://.godot/imported/sun.png-a0c2489c61a91217650c816eeb500297.ctex"]
 
 [params]
 

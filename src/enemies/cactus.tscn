@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://c16hdwi5ggrpx"]
 
 [ext_resource type="Script" path="res://src/enemies/cactus.gd" id="1_v2ayh"]
-[ext_resource type="Texture2D" uid="uid://5anj4u1ar6xi" path="res://assets/images/cactus1.png" id="2_wko34"]
+[ext_resource type="Texture2D" uid="uid://5anj4u1ar6xi" path="res://assets/images/enemies/cactus1.png" id="2_wko34"]
 [ext_resource type="Script" path="res://src/enemies/sprites.gd" id="3_8s61y"]
-[ext_resource type="Texture2D" uid="uid://nnjqsg3hud41" path="res://assets/images/cactus2.png" id="4_7c7yw"]
+[ext_resource type="Texture2D" uid="uid://nnjqsg3hud41" path="res://assets/images/enemies/cactus2.png" id="4_7c7yw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0nfw2"]
 size = Vector2(12, 50)
