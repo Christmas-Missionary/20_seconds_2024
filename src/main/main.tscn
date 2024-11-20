@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=28 format=3 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player/player.tscn" id="1_tolmm"]
@@ -19,9 +19,45 @@
 [ext_resource type="Script" path="res://src/main/auto_respawn.gd" id="13_v6o86"]
 [ext_resource type="Script" path="res://src/main/sfx_label.gd" id="15_k0hlb"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sljnt"]
+bg_color = Color(0, 0.25, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx1b4"]
+bg_color = Color(0.01, 0.085, 0.1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu3wi"]
+bg_color = Color(0, 0.5, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpcls"]
+bg_color = Color(0.024, 0.170667, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2usja"]
+bg_color = Color(0.024, 0.170667, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snkjk"]
+bg_color = Color(0.0117647, 0.0862745, 0.101961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxqmo"]
+bg_color = Color(0.0117647, 0.0862745, 0.101961, 1)
+
 [sub_resource type="Theme" id="Theme_jfflc"]
 default_font = ExtResource("4_2bdr6")
 default_font_size = 48
+Button/colors/font_color = Color(0.9, 0.9, 0, 1)
+Button/colors/font_focus_color = Color(0.901961, 0.901961, 0, 1)
+Button/colors/font_hover_color = Color(0.901961, 0.901961, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0.901961, 0.901961, 0, 1)
+Button/colors/font_pressed_color = Color(0.901961, 0.901961, 0, 1)
+Button/constants/outline_size = 15
+Button/styles/hover = SubResource("StyleBoxFlat_sljnt")
+Button/styles/normal = SubResource("StyleBoxFlat_qx1b4")
+Button/styles/pressed = SubResource("StyleBoxFlat_eu3wi")
+CheckButton/styles/hover = SubResource("StyleBoxFlat_bpcls")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxFlat_2usja")
+CheckButton/styles/normal = SubResource("StyleBoxFlat_snkjk")
+CheckButton/styles/pressed = SubResource("StyleBoxFlat_fxqmo")
+RichTextLabel/colors/default_color = Color(0, 0.75, 0.9, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lrd1q"]
 random_pitch = 2.0
@@ -140,6 +176,8 @@ bus = &"SFX"
 
 [node name="Container" type="HBoxContainer" parent="CanvasLayer/UI/ColorRect"]
 layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
 offset_right = 800.0
 offset_bottom = 400.0
 
@@ -168,6 +206,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 3
 text = "Automatic Respawn"
+alignment = 1
 script = ExtResource("13_v6o86")
 
 [node name="MusicLabel" type="RichTextLabel" parent="CanvasLayer/UI/ColorRect/Container/Options"]
@@ -179,6 +218,7 @@ text = "[center]Music Volume - 50"
 script = ExtResource("12_0efet")
 
 [node name="Music" type="HSlider" parent="CanvasLayer/UI/ColorRect/Container/Options"]
+modulate = Color(0, 1, 0, 1)
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
@@ -194,6 +234,7 @@ text = "[center]SFX Volume - 50"
 script = ExtResource("15_k0hlb")
 
 [node name="SFX" type="HSlider" parent="CanvasLayer/UI/ColorRect/Container/Options"]
+modulate = Color(0, 1, 0, 1)
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
@@ -212,6 +253,7 @@ text = "[center]I DON'T KNOW THE TITLE YET"
 [node name="LegalLabel" type="RichTextLabel" parent="CanvasLayer/UI/ColorRect"]
 visible = false
 layout_mode = 0
+offset_left = 3.0
 offset_right = 800.0
 offset_bottom = 400.0
 theme_override_font_sizes/normal_font_size = 32
