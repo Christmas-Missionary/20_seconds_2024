@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=33 format=3 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player/player.tscn" id="1_tolmm"]
@@ -40,6 +40,21 @@ bg_color = Color(0.0117647, 0.0862745, 0.101961, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxqmo"]
 bg_color = Color(0.0117647, 0.0862745, 0.101961, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmnti"]
+bg_color = Color(0.75, 0.46875, 0.1875, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s0qy"]
+bg_color = Color(0.9, 0.5625, 0.09, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwali"]
+bg_color = Color(0.7, 0.35, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibpa4"]
+bg_color = Color(1, 0.75, 0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfy7q"]
+bg_color = Color(1, 0.5, 0, 1)
+
 [sub_resource type="Theme" id="Theme_jfflc"]
 default_font = ExtResource("4_2bdr6")
 default_font_size = 48
@@ -56,8 +71,13 @@ CheckButton/styles/hover = SubResource("StyleBoxFlat_bpcls")
 CheckButton/styles/hover_pressed = SubResource("StyleBoxFlat_2usja")
 CheckButton/styles/normal = SubResource("StyleBoxFlat_snkjk")
 CheckButton/styles/pressed = SubResource("StyleBoxFlat_fxqmo")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_jmnti")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_0s0qy")
 RichTextLabel/colors/default_color = Color(0, 0.75, 0.9, 1)
 RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_kwali")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_ibpa4")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_lfy7q")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lrd1q"]
 random_pitch = 2.0
@@ -218,7 +238,6 @@ text = "[center]Music Volume - 50"
 script = ExtResource("12_0efet")
 
 [node name="Music" type="HSlider" parent="CanvasLayer/UI/ColorRect/Container/Options"]
-modulate = Color(0, 1, 0, 1)
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
@@ -234,7 +253,6 @@ text = "[center]SFX Volume - 50"
 script = ExtResource("15_k0hlb")
 
 [node name="SFX" type="HSlider" parent="CanvasLayer/UI/ColorRect/Container/Options"]
-modulate = Color(0, 1, 0, 1)
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
