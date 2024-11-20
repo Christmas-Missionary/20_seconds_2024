@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=4 uid="uid://df1f0hrwy0ppy"]
+
+[ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="1_p7mmx"]
+[ext_resource type="Script" path="res://src/forts/fort_seven.gd" id="2_4b6ot"]
+[ext_resource type="PackedScene" uid="uid://c16hdwi5ggrpx" path="res://src/enemies/cactus.tscn" id="3_t8lbs"]
+[ext_resource type="PackedScene" uid="uid://dvpnmfb71jgxd" path="res://src/enemies/bounce_pad.tscn" id="4_2vfk8"]
+
+[node name="FortSeven" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAABAP//AQAAAAAAAAACAP//AQAAAAAAAAADAP//AQAAAAAAAAAEAP//AQAAAAAAAAAFAP//AQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQAAAAAAAAAIAP//AQAAAAAAAAAJAP//AQAAAAAAAAAKAP//AQAAAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP//AQAAAAAAAAAOAP//AQAAAAAAAAAPAP//AQAAAAAAAAAQAP//AQAAAAAAAAARAP//AQAAAAAAAAASAP//AQAAAAAAAAATAP//AQAAAAAAAAAJAPz/AQAAAAAAAAAMAPn/AQAAAAAAAAAPAPb/AQAAAAAAAAA=")
+tile_set = ExtResource("1_p7mmx")
+script = ExtResource("2_4b6ot")
+
+[node name="Cactus" parent="." instance=ExtResource("3_t8lbs")]
+position = Vector2(130, -45)
+
+[node name="BouncePad" parent="." instance=ExtResource("4_2vfk8")]
+position = Vector2(130, -73)
+
+[node name="Cactus2" parent="." instance=ExtResource("3_t8lbs")]
+position = Vector2(190, -105)
+
+[node name="Cactus3" parent="." instance=ExtResource("3_t8lbs")]
+position = Vector2(250, -165)
+
+[node name="Cactus4" parent="." instance=ExtResource("3_t8lbs")]
+position = Vector2(310, -225)
+
+[node name="BouncePad2" parent="." instance=ExtResource("4_2vfk8")]
+position = Vector2(190, -133)
+
+[node name="BouncePad3" parent="." instance=ExtResource("4_2vfk8")]
+position = Vector2(250, -193)
+
+[node name="BouncePad4" parent="." instance=ExtResource("4_2vfk8")]
+position = Vector2(310, -253)
