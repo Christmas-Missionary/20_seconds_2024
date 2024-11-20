@@ -8,6 +8,7 @@ enum ENEMIES {
 	FIREBALL,
 	DUST_DEVIL,
 	BOUNCE_PAD,
+	DEATH_TRAP,
 }
 
 func _add(enemy: ENEMIES) -> Node2D:
@@ -18,6 +19,7 @@ func _add(enemy: ENEMIES) -> Node2D:
 		preload("res://src/enemies/fireball.tscn"),
 		preload("res://src/enemies/dust_devil.tscn"),
 		preload("res://src/enemies/bounce_pad.tscn"),
+		preload("res://src/enemies/death_trap.tscn"),
 	]
 	
 	var node: = ENEMY_SCENES[enemy].instantiate() as Node2D
