@@ -48,4 +48,4 @@ func _generate_next_fort() -> void:
 	fort.position = _notifier.position + Vector2(-150, 150)
 	_notifier.position.x += 500
 	
-	print(Time.get_ticks_usec() - start)
+	print(fort.name, " took ", Time.get_ticks_usec() - start, " microseconds.")
