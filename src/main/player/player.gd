@@ -5,13 +5,13 @@ enum _JUMP_STATES {NONE, QUEUE, READY}
 
 enum DEATH_CAUSE {TUMBLEWEED, CACTUS, FIREBALL, FELL_OFF, TIMES_UP}
 
-var _num_of_jumps: int = 0
+var num_of_jumps: int = 0
 
 var _jump_status: _JUMP_STATES = _JUMP_STATES.NONE:
 	set(js):
 		_jump_status = js
 		if _jump_status == _JUMP_STATES.READY:
-			_num_of_jumps = 0
+			num_of_jumps = 0
 			js = _JUMP_STATES.NONE
 		set_process(js)
 		if !js:
@@ -28,7 +28,7 @@ func _ready() -> void:
 func _jump() -> void:
 	const _JUMP_FORCE: float = 370.0
 	velocity.y = -_JUMP_FORCE
-	_num_of_jumps += 1
+	num_of_jumps += 1
 	_jump_player.play()
 
 func _physics_process(delta: float):
@@ -44,12 +44,12 @@ func _physics_process(delta: float):
 		_jump()
 		_jump_status = _JUMP_STATES.NONE
 	elif Input.is_action_just_pressed(&"Jump"):
-		if _num_of_jumps < 2:
+		if num_of_jumps < 2:
 			_jump()
 		else:
 			_jump_status = _JUMP_STATES.QUEUE
 	elif is_on_floor():
-		_num_of_jumps = 0
+		num_of_jumps = 0
 	move_and_slide()
 	
 	const _VIEWPORT_QUARTER_WIDTH: int = 300
