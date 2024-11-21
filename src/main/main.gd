@@ -19,7 +19,8 @@ var is_reloading: bool = false
 @onready var _notifier: = $Notifier as VisibleOnScreenNotifier2D
 
 func _ready() -> void:
-	MusicPlayer.set_stream_paused(false)
+	if MusicPlayer.stream_paused:
+		MusicPlayer.set_stream_paused(false)
 	var fort: = _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
 	add_child(fort)
 	fort.position = Vector2(500, 0)

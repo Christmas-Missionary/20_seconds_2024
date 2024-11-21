@@ -88,5 +88,5 @@ func die(cause: DEATH_CAUSE) -> void:
 		GameStats.last_score = floori(position.x / 20)
 		get_tree().reload_current_scene.call_deferred()
 	else:
-		MusicPlayer.set_stream_paused(true)
+		MusicPlayer.set_stream_paused(true) # Stream isn't actually paused on web, but is mute
 		($"../CanvasLayer/UI/Labels/TimeLeft/GameTimer" as Timer).set_paused(true)
