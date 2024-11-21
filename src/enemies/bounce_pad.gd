@@ -15,3 +15,5 @@ func _bounce_thing(body: Node) -> void:
 		var chara: = body as CharacterBody2D
 		chara.velocity.y = _FLING_VEL if (chara.position.y <= position.y) else -_FLING_VEL
 		chara.move_and_slide()
+		if body is Player:
+			(body as Player).num_of_jumps = 0
