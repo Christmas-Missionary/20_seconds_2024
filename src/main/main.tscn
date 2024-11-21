@@ -192,6 +192,7 @@ text = "HIGH SCORE: 0"
 script = ExtResource("6_uqvrq")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI"]
+visible = false
 layout_mode = 0
 offset_left = 380.0
 offset_top = 80.0
