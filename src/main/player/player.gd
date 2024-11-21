@@ -56,7 +56,7 @@ func _physics_process(delta: float):
 	_camera.limit_left = maxi(_camera.limit_left, int(_camera.get_screen_center_position().x - _VIEWPORT_QUARTER_WIDTH))
 	position.x = maxi(int(position.x), _camera.limit_left)
 	
-	block_distance.emit(floori(position.x / 20))
+	block_distance.emit(get_score())
 	if position.y > 50:
 		die(DEATH_CAUSE.FELL_OFF)
 
@@ -85,8 +85,11 @@ func die(cause: DEATH_CAUSE) -> void:
 		var timer: = $Timer as Timer
 		timer.start()
 		await timer.timeout
-		GameStats.last_score = floori(position.x / 20)
+		GameStats.last_score = get_score()
 		get_tree().reload_current_scene.call_deferred()
 	else:
 		MusicPlayer.set_stream_paused(true) # Stream isn't actually paused on web, but is mute
 		($"../CanvasLayer/UI/Labels/TimeLeft/GameTimer" as Timer).set_paused(true)
+
+func get_score() -> int:
+	return floori(position.x / 20)

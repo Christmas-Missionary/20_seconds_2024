@@ -24,12 +24,9 @@ func _init() -> void:
 			last_score = save_game.last_score
 
 func _notification(arg: int) -> void:
-	if arg == NOTIFICATION_WM_MOUSE_EXIT:
+	if arg == NOTIFICATION_WM_MOUSE_EXIT or arg == NOTIFICATION_WM_CLOSE_REQUEST:
 		(SaveGame.new()
-				 .save(music_volume, sfx_volume, is_respawning_automatically, high_score, last_score)
+				 .save(music_volume, sfx_volume, is_respawning_automatically, high_score, ($/root/Main/Player as Player).get_score())
 				 .to(_SAVE_PATH))
-	elif arg == NOTIFICATION_WM_CLOSE_REQUEST:
-		(SaveGame.new()
-				 .save(music_volume, sfx_volume, is_respawning_automatically, high_score, last_score)
-				 .to(_SAVE_PATH))
+	if arg == NOTIFICATION_WM_CLOSE_REQUEST:
 		get_tree().quit()
