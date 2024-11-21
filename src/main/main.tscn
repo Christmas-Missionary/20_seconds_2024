@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=39 format=3 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player/player.tscn" id="1_tolmm"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://src/main/ui/music_label.gd" id="12_0efet"]
 [ext_resource type="Script" path="res://src/main/auto_respawn.gd" id="13_v6o86"]
 [ext_resource type="Script" path="res://src/main/sfx_label.gd" id="15_k0hlb"]
+[ext_resource type="Script" path="res://src/title_effect.gd" id="22_qy6mh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sljnt"]
 bg_color = Color(0, 0.25, 0, 1)
@@ -91,6 +92,9 @@ VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_lfy7q")
 random_pitch = 2.0
 streams_count = 1
 stream_0/stream = ExtResource("11_v3mo6")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_hio4f"]
+script = ExtResource("22_qy6mh")
 
 [node name="Main" type="Node2D"]
 process_mode = 1
@@ -188,7 +192,6 @@ text = "HIGH SCORE: 0"
 script = ExtResource("6_uqvrq")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI"]
-visible = false
 layout_mode = 0
 offset_left = 380.0
 offset_top = 80.0
@@ -274,7 +277,8 @@ offset_right = 820.0
 offset_bottom = 550.0
 theme_override_font_sizes/normal_font_size = 112
 bbcode_enabled = true
-text = "[center]CASUAL DESERT PRANCING"
+text = "[center][desert]CASUAL DESERT PRANCING"
+custom_effects = [SubResource("RichTextEffect_hio4f")]
 
 [node name="LegalLabel" type="RichTextLabel" parent="CanvasLayer/UI/ColorRect"]
 visible = false
