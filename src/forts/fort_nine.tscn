@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=4 uid="uid://bkukvjt1x2rh3"]
+
+[ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="1_b4how"]
+[ext_resource type="PackedScene" uid="uid://bmr4gtup2a1ri" path="res://src/enemies/fireball_thrower.tscn" id="2_7eb6y"]
+[ext_resource type="PackedScene" uid="uid://c16hdwi5ggrpx" path="res://src/enemies/cactus.tscn" id="3_du8bl"]
+[ext_resource type="PackedScene" uid="uid://dvpnmfb71jgxd" path="res://src/enemies/bounce_pad.tscn" id="3_yplqp"]
+
+[node name="FortEight" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAABAP//AQAAAAAAAAACAP//AQAAAAAAAAADAP//AQAAAAAAAAAEAP//AQAAAAAAAAAFAP//AQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQAAAAAAAAAIAP//AQAAAAAAAAAJAP//AQAAAAAAAAAKAP//AQAAAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP//AQAAAAAAAAAOAP//AQAAAAAAAAAPAP//AQAAAAAAAAAQAP//AQAAAAAAAAARAP//AQAAAAAAAAASAP//AQAAAAAAAAATAP//AQAAAAAAAAA=")
+tile_set = ExtResource("1_b4how")
+
+[node name="FireballThrower" parent="." instance=ExtResource("2_7eb6y")]
+position = Vector2(250, -30)
+
+[node name="FireballThrower2" parent="." instance=ExtResource("2_7eb6y")]
+position = Vector2(270, -30)
+
+[node name="FireballThrower3" parent="." instance=ExtResource("2_7eb6y")]
+position = Vector2(250, -50)
+
+[node name="FireballThrower4" parent="." instance=ExtResource("2_7eb6y")]
+position = Vector2(270, -50)
+
+[node name="FireballThrower5" parent="." instance=ExtResource("2_7eb6y")]
+position = Vector2(250, -70)
+
+[node name="FireballThrower6" parent="." instance=ExtResource("2_7eb6y")]
+position = Vector2(270, -70)
+
+[node name="FireballThrower7" parent="." instance=ExtResource("2_7eb6y")]
+position = Vector2(250, -114)
+
+[node name="FireballThrower8" parent="." instance=ExtResource("2_7eb6y")]
+position = Vector2(270, -114)
+
+[node name="BouncePad" parent="." instance=ExtResource("3_yplqp")]
+position = Vector2(249, -83)
+
+[node name="BouncePad2" parent="." instance=ExtResource("3_yplqp")]
+position = Vector2(271, -83)
+
+[node name="Cactus" parent="." instance=ExtResource("3_du8bl")]
+position = Vector2(330, -46)
