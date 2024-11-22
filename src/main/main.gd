@@ -1,29 +1,30 @@
 extends Node2D
 
-const _ALL_FORTS: Array[PackedScene] = [
-	preload("res://src/forts/fort_one.tscn"),
-	preload("res://src/forts/fort_two.tscn"),
-	preload("res://src/forts/fort_three.tscn"),
-	preload("res://src/forts/fort_four.tscn"),
-	preload("res://src/forts/fort_five.tscn"),
-	preload("res://src/forts/fort_six.tscn"),
-	preload("res://src/forts/fort_seven.tscn"),
-	preload("res://src/forts/fort_eight.tscn"),
-	preload("res://src/forts/fort_nine.tscn"),
-]
-
-const _SIZE: int = 9
-
-signal request_pause
-
 var is_reloading: bool = false
 
 @onready var _notifier: = $Notifier as VisibleOnScreenNotifier2D
 
+signal request_pause
+
+static func _new_fort() -> Node2D:
+	const _ALL_FORTS: Array[PackedScene] = [
+		preload("res://src/forts/fort_one.tscn"),
+		preload("res://src/forts/fort_two.tscn"),
+		preload("res://src/forts/fort_three.tscn"),
+		preload("res://src/forts/fort_four.tscn"),
+		preload("res://src/forts/fort_five.tscn"),
+		preload("res://src/forts/fort_six.tscn"),
+		preload("res://src/forts/fort_seven.tscn"),
+		preload("res://src/forts/fort_eight.tscn"),
+		preload("res://src/forts/fort_nine.tscn"),
+	]
+	const _SIZE: int = 9
+	return _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
+
 func _ready() -> void:
 	if MusicPlayer.stream_paused:
 		MusicPlayer.set_stream_paused(false)
-	var fort: = _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
+	var fort: Node2D = _new_fort()
 	add_child(fort)
 	fort.position = Vector2(500, 0)
 	
@@ -46,7 +47,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		get_tree().set_pause(true)
 
 func _generate_next_fort() -> void:
-	var fort: = _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
+	var fort: Node2D = _new_fort()
 	add_child(fort)
 	fort.position = _notifier.position + Vector2(-150, 150)
 	_notifier.position.x += 500
