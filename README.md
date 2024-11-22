@@ -19,6 +19,6 @@ The file `bit_potion_ext.ttf` is by Joeb Rogers, under [CC-BY-4.0](https://creat
 
 # What's with the "other_copyrights" folder?  
 
-`GODOT_ENGINE` and `GODOT_3RD_PARTY` are there to fulfill any licenses they come with.  
-The files themselves are not important to the game, as it's contents are embedded in the Engine.  
+`GODOT_ENGINE` and `GODOT_3RD_PARTY` are there to fulfill all licenses from the Godot Engine and components used.  
+The files themselves are not important to the game, as its contents are embedded in the Engine.  
 The assets listed in `this_project.txt` belong to other copyright holders with their own licenses.
