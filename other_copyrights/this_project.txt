@@ -1,5 +1,5 @@
-This file is for assets used for this project specifically,
-detailing where the asset is, where it came from, its copyright, and its license.
+This file is for assets used for this project.  
+Details include where the asset is, where it came from, its copyright, its license, and any other needed info.  
 If the file path starts with "res://", it is a path relative to the top directory of the repo, 20_seconds_2024.
 
 
