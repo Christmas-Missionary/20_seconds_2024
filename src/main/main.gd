@@ -18,8 +18,7 @@ static func _new_fort() -> Node2D:
 		preload("res://src/forts/fort_eight.tscn"),
 		preload("res://src/forts/fort_nine.tscn"),
 	]
-	const _SIZE: int = 9
-	return _ALL_FORTS[randi() % _SIZE].instantiate() as Node2D
+	return _ALL_FORTS[((randi() % 8) if (randi() % 30) else 8)].instantiate() as Node2D
 
 func _ready() -> void:
 	if MusicPlayer.stream_paused:
