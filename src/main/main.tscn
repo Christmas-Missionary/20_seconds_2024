@@ -1,9 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://dwjidn2e36hua"]
+[gd_scene load_steps=40 format=3 uid="uid://dwjidn2e36hua"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_nanye"]
 [ext_resource type="PackedScene" uid="uid://oilqnix2sn8h" path="res://src/main/player/player.tscn" id="1_tolmm"]
 [ext_resource type="Script" path="res://src/main/cloud_layer.gd" id="2_2tnbl"]
 [ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="2_h45d6"]
+[ext_resource type="Script" path="res://src/main/escape_full_screen.gd" id="2_l83ng"]
 [ext_resource type="FontFile" uid="uid://bgd7dbp83hddp" path="res://assets/fonts/bit_potion_ext.ttf" id="4_2bdr6"]
 [ext_resource type="Script" path="res://src/main/ui/time_left_label.gd" id="4_61toc"]
 [ext_resource type="Texture2D" uid="uid://r5ehy6c4gt4k" path="res://assets/images/background/sun.png" id="4_si4jm"]
@@ -103,6 +104,10 @@ script = ExtResource("1_nanye")
 metadata/_edit_vertical_guides_ = [800.0, 900.0, 700.0, 23.0]
 metadata/_edit_horizontal_guides_ = [525.0, 625.0]
 metadata/_edit_lock_ = true
+
+[node name="EscapeFullScreen" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("2_l83ng")
 
 [node name="CloudLayer" type="Node2D" parent="."]
 script = ExtResource("2_2tnbl")
