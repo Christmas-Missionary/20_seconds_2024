@@ -13,3 +13,4 @@ func _ready() -> void:
 			preload("res://assets/images/background/cloud3.png"))
 		sprite.position = Vector2(x_pos, randf_range(-240, -280))
 		sprite.rotation = randf_range(0, TAU)
+		sprite.scale = Vector2.ONE * (randf_range(1.0, 2.5) if randi() % 25 else (randf_range(7.0, 9.0)))
