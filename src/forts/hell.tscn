@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=4 uid="uid://iqi4qsaedg84"]
+
+[ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="1_lahol"]
+[ext_resource type="PackedScene" uid="uid://bmr4gtup2a1ri" path="res://src/enemies/fireball_thrower.tscn" id="2_67qd5"]
+[ext_resource type="PackedScene" uid="uid://ry2qfpfm5skp" path="res://src/enemies/dust_devil.tscn" id="3_dfx3b"]
+
+[node name="Hell" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAABAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP//AQAAAAAAAAAOAP//AQAAAAAAAAALAP//AQAAAAAAAAAKAP//AQAAAAAAAAAJAP//AQAAAAAAAAAIAP//AQAAAAAAAAAHAP//AQAAAAAAAAAGAP//AQAAAAAAAAAFAP//AQAAAAAAAAAEAP//AQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAA=")
+tile_set = ExtResource("1_lahol")
+
+[node name="FireballThrower" parent="." instance=ExtResource("2_67qd5")]
+position = Vector2(190, -30)
+
+[node name="FireballThrower2" parent="." instance=ExtResource("2_67qd5")]
+position = Vector2(170, -30)
+
+[node name="FireballThrower3" parent="." instance=ExtResource("2_67qd5")]
+position = Vector2(150, -30)
+
+[node name="FireballThrower4" parent="." instance=ExtResource("2_67qd5")]
+position = Vector2(130, -30)
+
+[node name="FireballThrower5" parent="." instance=ExtResource("2_67qd5")]
+position = Vector2(110, -30)
+
+[node name="FireballThrower6" parent="." instance=ExtResource("2_67qd5")]
+position = Vector2(130, -50)
+
+[node name="FireballThrower7" parent="." instance=ExtResource("2_67qd5")]
+position = Vector2(150, -50)
+
+[node name="FireballThrower8" parent="." instance=ExtResource("2_67qd5")]
+position = Vector2(170, -50)
+
+[node name="FireballThrower9" parent="." instance=ExtResource("2_67qd5")]
+position = Vector2(150, -70)
+
+[node name="DustDevil" parent="." instance=ExtResource("3_dfx3b")]
+position = Vector2(274, -29)
