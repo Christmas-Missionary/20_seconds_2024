@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=4 uid="uid://cpv6l1rm0c6y1"]
+
+[ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="1_6fbbo"]
+[ext_resource type="Script" path="res://src/lands/land_six.gd" id="2_c6g0t"]
+
+[node name="LandSix" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAABAP//AQAAAAAAAAACAP//AQAAAAAAAAADAP//AQAAAAAAAAAEAP//AQAAAAAAAAAFAP//AQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQAAAAAAAAAIAP//AQAAAAAAAAAJAP//AQAAAAAAAAAKAP//AQAAAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP//AQAAAAAAAAAOAP//AQAAAAAAAAAIAPv/AQAAAAAAAAAIAPz/AQAAAAAAAAAHAPz/AQAAAAAAAAAHAP3/AQAAAAAAAAAGAP3/AQAAAAAAAAAGAP7/AQAAAAAAAAAFAP7/AQAAAAAAAAAHAP7/AQAAAAAAAAAIAP7/AQAAAAAAAAAIAP3/AQAAAAAAAAAJAP3/AQAAAAAAAAA=")
+tile_set = ExtResource("1_6fbbo")
+script = ExtResource("2_c6g0t")
