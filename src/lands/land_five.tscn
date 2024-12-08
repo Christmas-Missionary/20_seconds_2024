@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=4 uid="uid://f1whk1qlo77a"]
+
+[ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="1_jwxjq"]
+[ext_resource type="Script" path="res://src/lands/land_five.gd" id="2_c36xt"]
+[ext_resource type="PackedScene" uid="uid://dvpnmfb71jgxd" path="res://src/enemies/bounce_pad.tscn" id="3_kw8h8"]
+
+[node name="LandFive" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAABAP//AQAAAAAAAAACAP//AQAAAAAAAAADAP//AQAAAAAAAAAEAP//AQAAAAAAAAAFAP//AQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQAAAAAAAAAIAP//AQAAAAAAAAAJAP//AQAAAAAAAAAKAP//AQAAAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP//AQAAAAAAAAAOAP//AQAAAAAAAAA=")
+tile_set = ExtResource("1_jwxjq")
+script = ExtResource("2_c36xt")
+
+[node name="BouncePad" parent="." instance=ExtResource("3_kw8h8")]
+position = Vector2(270, -243)
