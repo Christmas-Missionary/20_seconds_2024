@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=4 uid="uid://c1bxygn8s5j6v"]
+
+[ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="1_o52f1"]
+[ext_resource type="Script" path="res://src/lands/land_four.gd" id="2_r48mu"]
+
+[node name="LandFour" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAABAP//AQAAAAAAAAACAP//AQAAAAAAAAADAP//AQAAAAAAAAAEAP//AQAAAAAAAAAFAP//AQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQAAAAAAAAAIAP//AQAAAAAAAAAJAP//AQAAAAAAAAAKAP//AQAAAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP//AQAAAAAAAAAOAP//AQAAAAAAAAAHAP7/AQAAAAAAAAAHAP3/AQAAAAAAAAAHAPr/AQAAAAAAAAAHAPn/AQAAAAAAAAAGAPn/AQAAAAAAAAAIAPn/AQAAAAAAAAA=")
+tile_set = ExtResource("1_o52f1")
+script = ExtResource("2_r48mu")
