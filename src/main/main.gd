@@ -18,6 +18,20 @@ static func _new_fort() -> Node2D:
 		preload("res://src/forts/fort_eight.tscn"),
 		preload("res://src/forts/fort_nine.tscn"),
 	]
+	const _ALL_LANDS: Array[PackedScene] = [
+		preload("res://src/lands/land_one.tscn"),
+		preload("res://src/lands/land_two.tscn"),
+		preload("res://src/lands/land_three.tscn"),
+		preload("res://src/lands/land_four.tscn"),
+		preload("res://src/lands/land_five.tscn"),
+		preload("res://src/lands/land_six.tscn"),
+		preload("res://src/lands/land_seven.tscn"),
+		preload("res://src/lands/land_eight.tscn"),
+	]
+	if !(randi() % 200):
+		return preload("res://src/forts/hell.tscn").instantiate() as Node2D
+	if (randi() % 8):
+		return _ALL_LANDS[randi() % 8].instantiate() as Node2D
 	return _ALL_FORTS[((randi() % 8) if (randi() % 30) else 8)].instantiate() as Node2D
 
 func _ready() -> void:
