@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=4 uid="uid://dtuctpx5th6fh"]
+
+[ext_resource type="TileSet" uid="uid://dxefvk7rqoljf" path="res://assets/block_tile_set.tres" id="1_r4ov1"]
+[ext_resource type="Script" path="res://src/lands/land_eight.gd" id="2_gq6o2"]
+
+[node name="LandEight" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAABAP//AQAAAAAAAAACAP//AQAAAAAAAAADAP//AQAAAAAAAAAEAP//AQAAAAAAAAAFAP//AQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQAAAAAAAAAIAP//AQAAAAAAAAAJAP//AQAAAAAAAAAKAP//AQAAAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP//AQAAAAAAAAAOAP//AQAAAAAAAAAKAP7/AQAAAAAAAAAGAPv/AQAAAAAAAAACAP7/AQAAAAAAAAA=")
+tile_set = ExtResource("1_r4ov1")
+script = ExtResource("2_gq6o2")
