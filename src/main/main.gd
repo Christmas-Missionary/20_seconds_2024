@@ -37,14 +37,17 @@ static func _new_fort() -> Node2D:
 func _ready() -> void:
 	if MusicPlayer.stream_paused:
 		MusicPlayer.set_stream_paused(false)
+	
 	var fort: Node2D = _new_fort()
 	add_child(fort)
 	fort.position = Vector2(500, 0)
 	
+	# Sets up floor
 	var tilelayer: = $BlockLayer as TileMapLayer
 	for i: int in range(2, 526): # 20 seconds of just running
 		tilelayer.set_cell(Vector2(i, -1), 1, Vector2i.ZERO)
 	
+	# Start Screen
 	if GameStats.is_first_time:
 		GameStats.is_first_time = false
 		request_pause.emit()

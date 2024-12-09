@@ -7,6 +7,7 @@ class_name SaveGame
 @export var high_score: int
 @export var last_score: int
 
+## returning itself is used for pipelining
 func save(music_vol: float, sfx_vol: float, auto_respawn: bool, high_score_: int, last_score_: int) -> SaveGame:
 	music_volume = music_vol
 	sfx_volume = sfx_vol
@@ -15,5 +16,6 @@ func save(music_vol: float, sfx_vol: float, auto_respawn: bool, high_score_: int
 	last_score = last_score_
 	return self
 
+## Saves to a constant String for a filepath
 func to(save_path: String) -> void:
 	ResourceSaver.save(self, save_path)

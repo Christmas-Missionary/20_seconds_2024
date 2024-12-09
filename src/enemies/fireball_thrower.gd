@@ -14,6 +14,8 @@ func _emit_fireball() -> void:
 	await _fire_timer.timeout
 	_audio.play()
 	_rest_timer.start(randf_range(0.3, 0.9))
+	
+	# Could have pipelined these 3 lines + preload() like with PlayerDeath
 	var ball: = _FIREBALL.instantiate() as Fireball
 	add_sibling(ball)
 	ball.spawn(position, Vector2.UP.rotated(randf_range(0, TAU)))

@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready() -> void:
 	var x_pos: int = 0
-	while (x_pos < 10520):
+	while (x_pos < 10520): # Distance of constant running for 25? (at least 20) seconds
 		x_pos += randi_range(200, 400)
 		var sprite: = Sprite2D.new()
 		add_child(sprite)
