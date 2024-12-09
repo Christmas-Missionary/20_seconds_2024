@@ -5,6 +5,7 @@ var _x_speed: float = 0.0
 var _velocity: Vector2 = Vector2.ZERO
 var _rot_speed: float = 0.0
 
+## used to pipeline functionality from init to spawn
 func as_sibling(to: Node) -> PlayerDeath:
 	to.get_parent().add_child(self)
 	return self
@@ -23,6 +24,7 @@ func spawn(trans: Transform2D, code: Player.DEATH_CAUSE) -> void:
 	_rot_speed = TAU * randf_range(-0.1, 0.1)
 	_x_speed = randf_range(-8.0, 8.0)
 	_velocity = Vector2(_x_speed, -randf_range(5.0, 10.0))
+	# Not all death causes are used, shouldn't be ternary
 	match code:
 		Player.DEATH_CAUSE.TUMBLEWEED:
 			modulate = Color(0.5, 0.25, 0.0)

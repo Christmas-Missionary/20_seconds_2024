@@ -17,17 +17,17 @@ func _physics_process(delta: float) -> void:
 	rotate((TAU / 90) * signf(_horizontal.x))
 	if !_is_wall_climbing:
 		velocity.y = 0.0 if is_on_floor() else velocity.y + (_GRAVITY * delta)
-		if is_on_wall():
+		if is_on_wall(): # Climb wall
 			_is_wall_climbing = true
 			velocity = Vector2(0, -_SPEED)
-	elif _is_wall_climbing and !is_on_wall():
+	elif _is_wall_climbing and !is_on_wall(): # Jump off wall, go other way
 		_is_wall_climbing = false
 		_horizontal = -_horizontal
 		velocity = _horizontal
 	if is_on_floor() and _last_velocity_y:
 		if _has_just_started:
 			_has_just_started = false
-		else:
+		else: # Prevents tumbleweed from making noise when it just spawned
 			_audio.play()
 	_last_velocity_y = velocity.y
 	move_and_slide()

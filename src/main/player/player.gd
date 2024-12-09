@@ -61,6 +61,7 @@ func _physics_process(delta: float):
 		die(DEATH_CAUSE.FELL_OFF)
 
 var time_since_jump_press: float = 0.0
+## Handles delayed jumping when you have no jumps left
 func _process(delta: float) -> void:
 	const _QUEUE_THESHOLD: float = 0.15
 	time_since_jump_press += delta
@@ -72,6 +73,7 @@ func _process(delta: float) -> void:
 var is_dead: bool = false
 
 func die(cause: DEATH_CAUSE) -> void:
+	# one time thing
 	if is_dead:
 		return
 	is_dead = true

@@ -5,7 +5,7 @@ const BUS_NAME: StringName = &"Music"
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
-	stream = preload("res://assets/music.ogg")
+	stream = preload("res://assets/music.ogg") # .ogg file is -q6
 	bus = BUS_NAME
 	volume_db = -10.0
 	play()

@@ -1,6 +1,7 @@
 extends Button
 
 func _ready() -> void:
+	# Can't do this in editor
 	pressed.connect(get_tree().set_pause.bind(false))
 
 @onready var _game_timer: = $/root/Main/CanvasLayer/UI/Labels/TimeLeft/GameTimer as Timer

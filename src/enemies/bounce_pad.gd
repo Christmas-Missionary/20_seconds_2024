@@ -5,10 +5,10 @@ extends RigidBody2D
 var _has_just_started: bool = true
 
 func _bounce_thing(body: Node) -> void:
-	const _FLING_VEL: float = -400
+	const _FLING_VEL: float = -400 # Up is negative y
 	if body == self:
 		return
-	if body is RigidBody2D:
+	if body is RigidBody2D: # Cactus, Tumbleweed, bounce pad, fireball thrower
 		if !_has_just_started:
 			_audio.play()
 		_has_just_started = false

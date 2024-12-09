@@ -11,6 +11,7 @@ enum ENEMIES {
 	DEATH_TRAP,
 }
 
+## Adds an enemy to the fort/land. This is used a lot as well as randi().
 func _add(enemy: ENEMIES) -> Node2D:
 	const ENEMY_SCENES: Array[PackedScene] = [
 		preload("res://src/enemies/tumbleweed.tscn"),
