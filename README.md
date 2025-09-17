@@ -4,7 +4,7 @@ This is a game I made for the 20 Second Game Jam 2024.
 https://christmas-missionary.itch.io/casual-desert-running  
 https://itch.io/jam/20-second-game-jam-2024  
   
-The Unlicense applies to all source code.  
+The 0BSD license applies to all source code.  
 All assets except for `bit_potion_ext.ttf` are by me, under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.en).  
 The file `bit_potion_ext.ttf` is by Joeb Rogers, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.en). No changes have been made.
 
